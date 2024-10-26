@@ -1,0 +1,173 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?d31f633e1960abee15f2e97679cd1626") format("truetype"),
+url("./flaticon.woff?d31f633e1960abee15f2e97679cd1626") format("woff"),
+url("./flaticon.woff2?d31f633e1960abee15f2e97679cd1626") format("woff2"),
+url("./flaticon.eot?d31f633e1960abee15f2e97679cd1626#iefix") format("embedded-opentype"),
+url("./flaticon.svg?d31f633e1960abee15f2e97679cd1626#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "power": "\f101",
+    "email": "\f102",
+    "like": "\f103",
+    "star": "\f104",
+    "heart": "\f105",
+    "loupe": "\f106",
+    "down-arrow": "\f107",
+    "menu": "\f108",
+    "grid": "\f109",
+    "layout": "\f10a",
+    "layout-1": "\f10b",
+    "chat": "\f10c",
+    "credit-card": "\f10d",
+    "credit-cards": "\f10e",
+    "paypal": "\f10f",
+    "money-transfer": "\f110",
+    "transfer": "\f111",
+    "info": "\f112",
+    "bookstore": "\f113",
+    "exclusive": "\f114",
+    "compass-circular-tool": "\f115",
+    "check-mark": "\f116",
+    "right-arrow": "\f117",
+    "left-arrow": "\f118",
+    "open-book": "\f119",
+    "user": "\f11a",
+    "close": "\f11b",
+    "send": "\f11c",
+    "shopping-cart": "\f11d",
+    "shopping-cart-1": "\f11e",
+    "phone": "\f11f",
+    "placeholder": "\f120",
+    "shield": "\f121",
+    "store": "\f122",
+    "group": "\f123",
+    "open-book-1": "\f124",
+    "leaf": "\f125",
+);
+
+.flaticon-power:before {
+    content: map-get($flaticon-map, "power");
+}
+.flaticon-email:before {
+    content: map-get($flaticon-map, "email");
+}
+.flaticon-like:before {
+    content: map-get($flaticon-map, "like");
+}
+.flaticon-star:before {
+    content: map-get($flaticon-map, "star");
+}
+.flaticon-heart:before {
+    content: map-get($flaticon-map, "heart");
+}
+.flaticon-loupe:before {
+    content: map-get($flaticon-map, "loupe");
+}
+.flaticon-down-arrow:before {
+    content: map-get($flaticon-map, "down-arrow");
+}
+.flaticon-menu:before {
+    content: map-get($flaticon-map, "menu");
+}
+.flaticon-grid:before {
+    content: map-get($flaticon-map, "grid");
+}
+.flaticon-layout:before {
+    content: map-get($flaticon-map, "layout");
+}
+.flaticon-layout-1:before {
+    content: map-get($flaticon-map, "layout-1");
+}
+.flaticon-chat:before {
+    content: map-get($flaticon-map, "chat");
+}
+.flaticon-credit-card:before {
+    content: map-get($flaticon-map, "credit-card");
+}
+.flaticon-credit-cards:before {
+    content: map-get($flaticon-map, "credit-cards");
+}
+.flaticon-paypal:before {
+    content: map-get($flaticon-map, "paypal");
+}
+.flaticon-money-transfer:before {
+    content: map-get($flaticon-map, "money-transfer");
+}
+.flaticon-transfer:before {
+    content: map-get($flaticon-map, "transfer");
+}
+.flaticon-info:before {
+    content: map-get($flaticon-map, "info");
+}
+.flaticon-bookstore:before {
+    content: map-get($flaticon-map, "bookstore");
+}
+.flaticon-exclusive:before {
+    content: map-get($flaticon-map, "exclusive");
+}
+.flaticon-compass-circular-tool:before {
+    content: map-get($flaticon-map, "compass-circular-tool");
+}
+.flaticon-check-mark:before {
+    content: map-get($flaticon-map, "check-mark");
+}
+.flaticon-right-arrow:before {
+    content: map-get($flaticon-map, "right-arrow");
+}
+.flaticon-left-arrow:before {
+    content: map-get($flaticon-map, "left-arrow");
+}
+.flaticon-open-book:before {
+    content: map-get($flaticon-map, "open-book");
+}
+.flaticon-user:before {
+    content: map-get($flaticon-map, "user");
+}
+.flaticon-close:before {
+    content: map-get($flaticon-map, "close");
+}
+.flaticon-send:before {
+    content: map-get($flaticon-map, "send");
+}
+.flaticon-shopping-cart:before {
+    content: map-get($flaticon-map, "shopping-cart");
+}
+.flaticon-shopping-cart-1:before {
+    content: map-get($flaticon-map, "shopping-cart-1");
+}
+.flaticon-phone:before {
+    content: map-get($flaticon-map, "phone");
+}
+.flaticon-placeholder:before {
+    content: map-get($flaticon-map, "placeholder");
+}
+.flaticon-shield:before {
+    content: map-get($flaticon-map, "shield");
+}
+.flaticon-store:before {
+    content: map-get($flaticon-map, "store");
+}
+.flaticon-group:before {
+    content: map-get($flaticon-map, "group");
+}
+.flaticon-open-book-1:before {
+    content: map-get($flaticon-map, "open-book-1");
+}
+.flaticon-leaf:before {
+    content: map-get($flaticon-map, "leaf");
+}

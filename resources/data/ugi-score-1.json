@@ -1,0 +1,1510 @@
+[
+  {
+    "model": "claude-3-5-sonnet-20240620",
+    "writing": 0.771
+  },
+  {
+    "model": "gpt-4o-2024-05-13",
+    "writing": 0.762
+  },
+  {
+    "model": "Gemini 1.5 Pro 002",
+    "writing": 0.676
+  },
+  {
+    "model": "claude-3-opus-20240229",
+    "writing": 0.649
+  },
+  {
+    "model": "Gemini 1.5 Pro",
+    "writing": 0.577
+  },
+  {
+    "model": "microsoft\/WizardLM-2-8x22B",
+    "writing": 0.503
+  },
+  {
+    "model": "Gemini 1.5 Pro Experimental 0801",
+    "writing": 0.481
+  },
+  {
+    "model": "gpt-4-1106-preview",
+    "writing": 0.459
+  },
+  {
+    "model": "alpindale\/magnum-72b-v1",
+    "writing": 0.441
+  },
+  {
+    "model": "Gemini 1.5 Pro Experimental 0827",
+    "writing": 0.429
+  },
+  {
+    "model": "gpt-4-turbo-2024-04-09",
+    "writing": 0.381
+  },
+  {
+    "model": "TheDrummer\/Gemmasutra-Pro-27B-v1",
+    "writing": 0.377
+  },
+  {
+    "model": "NousResearch\/Hermes-3-Llama-3.1-405B",
+    "writing": 0.375
+  },
+  {
+    "model": "nbeerbower\/Lyra-Gutenberg-mistral-nemo-12B",
+    "writing": 0.367
+  },
+  {
+    "model": "nbeerbower\/gemma2-gutenberg-27B",
+    "writing": 0.362
+  },
+  {
+    "model": "Sao10K\/L3-70B-Euryale-v2.1",
+    "writing": 0.361
+  },
+  {
+    "model": "anthracite-org\/magnum-12b-v2.5-kto",
+    "writing": 0.339
+  },
+  {
+    "model": "lightblue\/Karasu-Mixtral-8x22B-v0.1",
+    "writing": 0.334
+  },
+  {
+    "model": "anthracite-org\/magnum-v2-123b",
+    "writing": 0.331
+  },
+  {
+    "model": "brucethemoose\/Yi-34B-200K-RPMerge",
+    "writing": 0.328
+  },
+  {
+    "model": "bosonai\/Higgs-Llama-3-70B",
+    "writing": 0.327
+  },
+  {
+    "model": "nbeerbower\/mistral-nemo-gutenberg-12B-v3",
+    "writing": 0.326
+  },
+  {
+    "model": "turboderp\/Cat-Llama-3-70B-instruct",
+    "writing": 0.319
+  },
+  {
+    "model": "mistralai\/Mixtral-8x7B-Instruct-v0.1",
+    "writing": 0.311
+  },
+  {
+    "model": "Grok-2 (beta)",
+    "writing": 0.309
+  },
+  {
+    "model": "intervitens\/mini-magnum-12b-v1.1",
+    "writing": 0.306
+  },
+  {
+    "model": "mistralai\/Mixtral-8x22B-Instruct-v0.1",
+    "writing": 0.305
+  },
+  {
+    "model": "Nohobby\/MN-12B-Siskin-v0.1",
+    "writing": 0.302
+  },
+  {
+    "model": "cognitivecomputations\/dolphin-2.9.2-mixtral-8x22b",
+    "writing": 0.301
+  },
+  {
+    "model": "schnapper79\/lumikabra-123B_v0.4",
+    "writing": 0.296
+  },
+  {
+    "model": "NousResearch\/Hermes-3-Llama-3.1-70B",
+    "writing": 0.295
+  },
+  {
+    "model": "jukofyork\/Dark-Miqu-70B",
+    "writing": 0.295
+  },
+  {
+    "model": "wolfram\/miqu-1-120b",
+    "writing": 0.295
+  },
+  {
+    "model": "Sao10K\/L3-8B-Niitama-v1",
+    "writing": 0.294
+  },
+  {
+    "model": "anthracite-org\/magnum-v2-72b",
+    "writing": 0.292
+  },
+  {
+    "model": "nbeerbower\/mistral-nemo-gutenberg-12B-v4",
+    "writing": 0.292
+  },
+  {
+    "model": "nbeerbower\/Gemma2-Gutenberg-Doppel-9B",
+    "writing": 0.289
+  },
+  {
+    "model": "migtissera\/Tess-2.0-Llama-3-70B-v0.2",
+    "writing": 0.287
+  },
+  {
+    "model": "VAGOsolutions\/Llama-3.1-SauerkrautLM-70b-Instruct",
+    "writing": 0.286
+  },
+  {
+    "model": "cognitivecomputations\/dolphin-2.9.3-mistral-nemo-12b",
+    "writing": 0.284
+  },
+  {
+    "model": "DavidAU\/Command-R-01-Ultra-NEO-V1-35B",
+    "writing": 0.281
+  },
+  {
+    "model": "alpindale\/goliath-120b",
+    "writing": 0.28
+  },
+  {
+    "model": "softwareweaver\/Twilight-Miqu-146B",
+    "writing": 0.279
+  },
+  {
+    "model": "Sao10K\/L3-8B-Lunaris-v1",
+    "writing": 0.274
+  },
+  {
+    "model": "aetherwiing\/MN-12B-Starcannon-v2",
+    "writing": 0.272
+  },
+  {
+    "model": "Steelskull\/L3-MS-Astoria-70b",
+    "writing": 0.271
+  },
+  {
+    "model": "zetasepic\/Qwen2.5-72B-Instruct-abliterated",
+    "writing": 0.27
+  },
+  {
+    "model": "Sao10K\/MN-12B-Lyra-v4",
+    "writing": 0.27
+  },
+  {
+    "model": "NeverSleep\/Lumimaid-v0.2-123B",
+    "writing": 0.269
+  },
+  {
+    "model": "TheDrummer\/Gemmasutra-9B-v1",
+    "writing": 0.269
+  },
+  {
+    "model": "mistralai\/Mistral-Small-Instruct-2409",
+    "writing": 0.268
+  },
+  {
+    "model": "sophosympatheia\/New-Dawn-Llama-3-70B-32K-v1.0",
+    "writing": 0.267
+  },
+  {
+    "model": "Darkknight535\/OpenCrystal-12B-L3",
+    "writing": 0.265
+  },
+  {
+    "model": "mistralai\/Mistral-Large-Instruct-2407",
+    "writing": 0.264
+  },
+  {
+    "model": "ArliAI\/ArliAI-RPMax-12B-v1.1",
+    "writing": 0.264
+  },
+  {
+    "model": "elinas\/Chronos-Gold-12B-1.0",
+    "writing": 0.264
+  },
+  {
+    "model": "abacusai\/Smaug-Llama-3-70B-Instruct-32K",
+    "writing": 0.263
+  },
+  {
+    "model": "TheDrummer\/UnslopNemo-v2 (chatml)",
+    "writing": 0.26
+  },
+  {
+    "model": "cognitivecomputations\/dolphin-2.9.1-llama-3-70b",
+    "writing": 0.26
+  },
+  {
+    "model": "MarinaraSpaghetti\/RP-Stew-v2.5-34B",
+    "writing": 0.26
+  },
+  {
+    "model": "Sao10K\/Llama-3.1-8B-Stheno-v3.4",
+    "writing": 0.259
+  },
+  {
+    "model": "juvi21\/Hermes-2-Theta-L3-Euryale-Ties-0.8-70B",
+    "writing": 0.258
+  },
+  {
+    "model": "inflatebot\/MN-12B-Mag-Mell-R1",
+    "writing": 0.258
+  },
+  {
+    "model": "Darkknight535\/OpenCrystal-15B-L3-v2",
+    "writing": 0.254
+  },
+  {
+    "model": "Sao10K\/L3.1-70B-Euryale-v2.2",
+    "writing": 0.253
+  },
+  {
+    "model": "TheDrummer\/Rocinante-12B-v1.1",
+    "writing": 0.252
+  },
+  {
+    "model": "ddh0\/MiquSuperdark-70B-v2",
+    "writing": 0.251
+  },
+  {
+    "model": "v000000\/L3-8B-Stheno-v3.2-abliterated",
+    "writing": 0.251
+  },
+  {
+    "model": "ArliAI\/Llama-3.1-70B-ArliAI-RPMax-v1.1",
+    "writing": 0.249
+  },
+  {
+    "model": "tannedbum\/Ellaria-9B",
+    "writing": 0.249
+  },
+  {
+    "model": "google\/gemma-2-27b-it",
+    "writing": 0.249
+  },
+  {
+    "model": "anthracite-org\/magnum-v3-34b",
+    "writing": 0.248
+  },
+  {
+    "model": "meta-llama\/Meta-Llama-3-70B-Instruct",
+    "writing": 0.245
+  },
+  {
+    "model": "jukofyork\/Dusk-Miqu-70B",
+    "writing": 0.243
+  },
+  {
+    "model": "gpt-4o-2024-08-06",
+    "writing": 0.242
+  },
+  {
+    "model": "ShinojiResearch\/Senku-70B-Full",
+    "writing": 0.241
+  },
+  {
+    "model": "Undi95\/Miqu-70B-Alpaca-DPO",
+    "writing": 0.24
+  },
+  {
+    "model": "rhplus0831\/maid-yuzu-v8",
+    "writing": 0.239
+  },
+  {
+    "model": "Sao10K\/MN-12B-Lyra-v1",
+    "writing": 0.239
+  },
+  {
+    "model": "Qwen\/Qwen2.5-72B-Instruct",
+    "writing": 0.237
+  },
+  {
+    "model": "KoboldAI\/LLaMA2-13B-Psyfighter2",
+    "writing": 0.236
+  },
+  {
+    "model": "UCLA-AGI\/Gemma-2-9B-It-SPPO-Iter3",
+    "writing": 0.236
+  },
+  {
+    "model": "icefog72\/IceLemonTeaRP-32k-7b",
+    "writing": 0.234
+  },
+  {
+    "model": "TheDrummer\/Cydonia-22B-v1",
+    "writing": 0.23
+  },
+  {
+    "model": "nbeerbower\/Lyra4-Gutenberg-12B",
+    "writing": 0.229
+  },
+  {
+    "model": "BeaverAI\/Theia-21B-v2b",
+    "writing": 0.228
+  },
+  {
+    "model": "sophosympatheia\/Midnight-Miqu-70B-v1.5",
+    "writing": 0.228
+  },
+  {
+    "model": "Dogge\/llama-3-70B-instruct-uncensored",
+    "writing": 0.228
+  },
+  {
+    "model": "BeaverAI\/Rocinante-12B-v1a",
+    "writing": 0.227
+  },
+  {
+    "model": "nbeerbower\/gemma2-gutenberg-9B",
+    "writing": 0.227
+  },
+  {
+    "model": "NeverSleep\/MiquMaid-v3-70B",
+    "writing": 0.225
+  },
+  {
+    "model": "MarinaraSpaghetti\/Nemomix-v4.0-12B",
+    "writing": 0.224
+  },
+  {
+    "model": "DreadPoor\/Aspire-8B-model_stock",
+    "writing": 0.224
+  },
+  {
+    "model": "TheDrummer\/Tiger-Gemma-9B-v2",
+    "writing": 0.223
+  },
+  {
+    "model": "mistralai\/Mistral-Nemo-Instruct-2407",
+    "writing": 0.221
+  },
+  {
+    "model": "Doctor-Shotgun\/limarp-miqu-1-70b-qlora",
+    "writing": 0.22
+  },
+  {
+    "model": "TheDrummer\/Star-Command-R-32B-v1",
+    "writing": 0.219
+  },
+  {
+    "model": "sophosympatheia\/Midnight-Miqu-70B-v1.0",
+    "writing": 0.219
+  },
+  {
+    "model": "failspy\/llama-3-70B-Instruct-abliterated",
+    "writing": 0.217
+  },
+  {
+    "model": "NousResearch\/Hermes-2-Theta-Llama-3-70B",
+    "writing": 0.217
+  },
+  {
+    "model": "BeaverAI\/mistral-doryV2-12b",
+    "writing": 0.217
+  },
+  {
+    "model": "dreamgen\/opus-v1.4-70b-llama3",
+    "writing": 0.211
+  },
+  {
+    "model": "failspy\/Smaug-Llama-3-70B-Instruct-abliterated-v3",
+    "writing": 0.211
+  },
+  {
+    "model": "Nohobby\/MN-12B-Siskin-v0.2",
+    "writing": 0.211
+  },
+  {
+    "model": "TheDrummer\/Theia-21B-v1",
+    "writing": 0.21
+  },
+  {
+    "model": "TheDrummer\/Smegmma-Deluxe-9B-v1",
+    "writing": 0.21
+  },
+  {
+    "model": "gpt-4o-mini",
+    "writing": 0.21
+  },
+  {
+    "model": "jondurbin\/spicyboros-70b-2.2",
+    "writing": 0.208
+  },
+  {
+    "model": "Casual-Autopsy\/L3-Umbral-Mind-RP-v2.0-8B",
+    "writing": 0.207
+  },
+  {
+    "model": "NotAiLOL\/Knight-Miqu-70B",
+    "writing": 0.206
+  },
+  {
+    "model": "ArliAI\/Mistral-Small-22B-ArliAI-RPMax-v1.1",
+    "writing": 0.204
+  },
+  {
+    "model": "IlyaGusev\/gemma-2-9b-it-abliterated",
+    "writing": 0.204
+  },
+  {
+    "model": "invisietch\/EtherealRainbow-v0.3-8B",
+    "writing": 0.203
+  },
+  {
+    "model": "alchemonaut\/QuartetAnemoi-70B-t0.0001",
+    "writing": 0.201
+  },
+  {
+    "model": "Undi95\/Meta-Llama-3.1-8B-Claude-39fail-3000total",
+    "writing": 0.201
+  },
+  {
+    "model": "TheDrummer\/Llama-3SOME-8B-v2",
+    "writing": 0.2
+  },
+  {
+    "model": "TheDrummer\/Rocinante-12B-v1",
+    "writing": 0.199
+  },
+  {
+    "model": "bhenrym14\/platypus-yi-34b",
+    "writing": 0.195
+  },
+  {
+    "model": "abideen\/Liberated-Miqu-70B",
+    "writing": 0.195
+  },
+  {
+    "model": "crestf411\/daybreak-miqu-1-70b-v1.0-hf",
+    "writing": 0.195
+  },
+  {
+    "model": "crestf411\/L3-8B-sunfall-v0.4-stheno-v3.2",
+    "writing": 0.194
+  },
+  {
+    "model": "sophosympatheia\/Midnight-Miqu-103B-v1.0",
+    "writing": 0.194
+  },
+  {
+    "model": "meta-llama\/Meta-Llama-3-70B",
+    "writing": 0.193
+  },
+  {
+    "model": "crestf411\/L3-70B-daybreak-storywriter-v0.4",
+    "writing": 0.193
+  },
+  {
+    "model": "tenyx\/Llama3-TenyxChat-70B",
+    "writing": 0.193
+  },
+  {
+    "model": "deepseek-ai\/DeepSeek-Coder-V2-Lite-Instruct",
+    "writing": 0.192
+  },
+  {
+    "model": "ParasiticRogue\/Instant-RP-Noodles-12B-v1.2",
+    "writing": 0.191
+  },
+  {
+    "model": "crestf411\/L3-70B-daybreak-abliterated-v0.4",
+    "writing": 0.189
+  },
+  {
+    "model": "princeton-nlp\/gemma-2-9b-it-SimPO",
+    "writing": 0.188
+  },
+  {
+    "model": "Luni\/StarDust-12b-v2",
+    "writing": 0.187
+  },
+  {
+    "model": "FiditeNemini\/Llama3-FiditeNemini-70B",
+    "writing": 0.187
+  },
+  {
+    "model": "DreadPoor\/Aurora_faustus-8B-LINEAR",
+    "writing": 0.187
+  },
+  {
+    "model": "databricks\/dbrx-instruct",
+    "writing": 0.186
+  },
+  {
+    "model": "SicariusSicariiStuff\/Dusk_Rainbow",
+    "writing": 0.186
+  },
+  {
+    "model": "anthracite-org\/magnum-12b-v2",
+    "writing": 0.185
+  },
+  {
+    "model": "ZeusLabs\/Chronos-Platinum-72B",
+    "writing": 0.185
+  },
+  {
+    "model": "Nitral-Archive\/Hathor_Unstable-L3-8B-v0.3",
+    "writing": 0.183
+  },
+  {
+    "model": "rityak\/MN-HaremUnion-12B",
+    "writing": 0.182
+  },
+  {
+    "model": "KoboldAI\/LLaMA2-13B-Tiefighter",
+    "writing": 0.182
+  },
+  {
+    "model": "turboderp\/turbcat-instruct-72b",
+    "writing": 0.181
+  },
+  {
+    "model": "cognitivecomputations\/dolphin-2.7-mixtral-8x7b",
+    "writing": 0.179
+  },
+  {
+    "model": "BeaverAI\/Gemmasutra-Mini-2B-v2aa",
+    "writing": 0.179
+  },
+  {
+    "model": "HiroseKoichi\/Llama-3-8B-Stroganoff-2.0",
+    "writing": 0.178
+  },
+  {
+    "model": "TheSkullery\/DA-NeMona-21B",
+    "writing": 0.177
+  },
+  {
+    "model": "TheSkullery\/MS-NeMona-21B",
+    "writing": 0.177
+  },
+  {
+    "model": "mlabonne\/Llama-3.1-70B-Instruct-lorablated",
+    "writing": 0.176
+  },
+  {
+    "model": "miqudev\/miqu-1-70b",
+    "writing": 0.176
+  },
+  {
+    "model": "Casual-Autopsy\/L3-Umbral-Mind-RP-v0.3-8B",
+    "writing": 0.176
+  },
+  {
+    "model": "BeaverAI\/NeMoist-21B-v1a",
+    "writing": 0.175
+  },
+  {
+    "model": "nvidia\/Llama3-ChatQA-1.5-70B",
+    "writing": 0.174
+  },
+  {
+    "model": "Doctor-Shotgun\/Mixtral-8x7B-Instruct-v0.1-LimaRP-ZLoss",
+    "writing": 0.174
+  },
+  {
+    "model": "cognitivecomputations\/dolphin-2.5-mixtral-8x7b",
+    "writing": 0.174
+  },
+  {
+    "model": "cognitivecomputations\/dolphin-2.9.1-qwen-110b",
+    "writing": 0.174
+  },
+  {
+    "model": "Doctor-Shotgun\/Mixtral-8x7B-Instruct-v0.1-LimaRP-ZLoss-DARE-TIES",
+    "writing": 0.174
+  },
+  {
+    "model": "BeaverAI\/Pocket-Tiger-Gemma-2B-v1f",
+    "writing": 0.174
+  },
+  {
+    "model": "crestf411\/L3-70B-sunfall-abliterated-v0.2",
+    "writing": 0.173
+  },
+  {
+    "model": "crestf411\/llama-3-daybreak-v0.2-70b-hf",
+    "writing": 0.173
+  },
+  {
+    "model": "Sao10K\/Fimbulvetr-11B-v2",
+    "writing": 0.173
+  },
+  {
+    "model": "GalrionSoftworks\/Pleiades-12B-v1",
+    "writing": 0.173
+  },
+  {
+    "model": "CohereForAI\/c4ai-command-r-plus",
+    "writing": 0.172
+  },
+  {
+    "model": "Orenguteng\/Llama-3-8B-Lexi-Uncensored",
+    "writing": 0.172
+  },
+  {
+    "model": "brucethemoose\/Yi-34B-200K-DARE-megamerge-v8",
+    "writing": 0.171
+  },
+  {
+    "model": "nbeerbower\/mistral-nemo-gutades-12B",
+    "writing": 0.171
+  },
+  {
+    "model": "bluuwhale\/L3-SthenoMaidBlackroot-8B-V1",
+    "writing": 0.17
+  },
+  {
+    "model": "TheDrummer\/Moistral-11B-v3",
+    "writing": 0.17
+  },
+  {
+    "model": "MarinaraSpaghetti\/NemoReRemix-12B",
+    "writing": 0.169
+  },
+  {
+    "model": "BeaverAI\/Pocket-Tiger-Gemma-2B-v1e",
+    "writing": 0.168
+  },
+  {
+    "model": "alchemonaut\/BoreanGale-70B",
+    "writing": 0.167
+  },
+  {
+    "model": "Sao10K\/L3-8B-Stheno-v3.2",
+    "writing": 0.166
+  },
+  {
+    "model": "NeverSleep\/Llama-3-Lumimaid-8B-v0.1-OAS",
+    "writing": 0.165
+  },
+  {
+    "model": "TheDrummer\/Behemoth-123B-v1",
+    "writing": 0.163
+  },
+  {
+    "model": "Undi95\/Miqu-MS-70B",
+    "writing": 0.163
+  },
+  {
+    "model": "nbeerbower\/Gutensuppe-mistral-nemo-12B",
+    "writing": 0.163
+  },
+  {
+    "model": "meta-llama\/Meta-Llama-3.1-405B-Instruct",
+    "writing": 0.163
+  },
+  {
+    "model": "ChaoticNeutrals\/Domain-Fusion-L3-8B",
+    "writing": 0.163
+  },
+  {
+    "model": "Cas-Warehouse\/Llama-3-Mopeyfied-Psychology-8B",
+    "writing": 0.163
+  },
+  {
+    "model": "TheDrummer\/Gemmasutra-Mini-2B-v1",
+    "writing": 0.162
+  },
+  {
+    "model": "Gryphe\/MythoMax-L2-13b",
+    "writing": 0.162
+  },
+  {
+    "model": "nbeerbower\/mistral-nemo-wissenschaft-12B",
+    "writing": 0.161
+  },
+  {
+    "model": "grimjim\/Gemma2-Nephilim-v3-9B",
+    "writing": 0.159
+  },
+  {
+    "model": "MarinaraSpaghetti\/NemoMix-Unleashed-12B",
+    "writing": 0.158
+  },
+  {
+    "model": "TheDrummer\/Tiger-Gemma-9B-v3",
+    "writing": 0.157
+  },
+  {
+    "model": "abacusai\/Smaug-Llama-3-70B-Instruct",
+    "writing": 0.157
+  },
+  {
+    "model": "TheDrummer\/Tiger-Gemma-9B-v1",
+    "writing": 0.156
+  },
+  {
+    "model": "DreadPoor\/Heart_Stolen-8B-Model_Stock",
+    "writing": 0.156
+  },
+  {
+    "model": "ChaoticNeutrals\/Hathor_RP-v.01-L3-8B",
+    "writing": 0.156
+  },
+  {
+    "model": "aetherwiing\/MN-12B-Starcannon-v3",
+    "writing": 0.155
+  },
+  {
+    "model": "fne\/Jais-70b",
+    "writing": 0.154
+  },
+  {
+    "model": "BeaverAI\/NeMoist-21B-v0.5",
+    "writing": 0.154
+  },
+  {
+    "model": "invisietch\/Atlantis-v0.1-12B",
+    "writing": 0.154
+  },
+  {
+    "model": "ValiantLabs\/Llama3-70B-Fireplace",
+    "writing": 0.154
+  },
+  {
+    "model": "MarsupialAI\/Melusine_103b",
+    "writing": 0.153
+  },
+  {
+    "model": "BeaverAI\/Gemmasutra-Mini-2B-v2y",
+    "writing": 0.153
+  },
+  {
+    "model": "migtissera\/Llama-3-8B-Synthia-v3.5",
+    "writing": 0.152
+  },
+  {
+    "model": "NousResearch\/Nous-Capybara-34B",
+    "writing": 0.151
+  },
+  {
+    "model": "deepseek-ai\/DeepSeek-V2-Chat-0628",
+    "writing": 0.15
+  },
+  {
+    "model": "HiroseKoichi\/Llama-3-8B-Stroganoff",
+    "writing": 0.15
+  },
+  {
+    "model": "Qwen\/Qwen2.5-14B-Instruct",
+    "writing": 0.15
+  },
+  {
+    "model": "Qwen\/Qwen2-72B-Instruct",
+    "writing": 0.149
+  },
+  {
+    "model": "tannedbum\/L3-Rhaenys-8B",
+    "writing": 0.149
+  },
+  {
+    "model": "crestf411\/daybreak-kunoichi-2dpo-7b",
+    "writing": 0.149
+  },
+  {
+    "model": "nbeerbower\/mistral-nemo-gutenberg-12B",
+    "writing": 0.148
+  },
+  {
+    "model": "meta-llama\/Llama-2-70b-chat-hf",
+    "writing": 0.147
+  },
+  {
+    "model": "tannedbum\/L3-Nymeria-Maid-8B",
+    "writing": 0.146
+  },
+  {
+    "model": "ChaoticNeutrals\/Poppy_Porpoise-1.4-L3-8B",
+    "writing": 0.145
+  },
+  {
+    "model": "Nitral-AI\/Poppy_Porpoise-0.72-L3-8B",
+    "writing": 0.145
+  },
+  {
+    "model": "anthracite-org\/magnum-32b-v1",
+    "writing": 0.144
+  },
+  {
+    "model": "mattshumer\/Reflection-Llama-3.1-70B",
+    "writing": 0.143
+  },
+  {
+    "model": "CohereForAI\/aya-23-8B",
+    "writing": 0.143
+  },
+  {
+    "model": "sophosympatheia\/New-Dawn-Llama-3.1-70B-v1.1",
+    "writing": 0.142
+  },
+  {
+    "model": "mlabonne\/NeuralDaredevil-8B-abliterated",
+    "writing": 0.142
+  },
+  {
+    "model": "tannedbum\/L3-Nymeria-8B",
+    "writing": 0.142
+  },
+  {
+    "model": "TheDrummer\/Big-Tiger-Gemma-27B-v1",
+    "writing": 0.141
+  },
+  {
+    "model": "bluuwhale\/L3-SthenoMaid-8B-V1",
+    "writing": 0.141
+  },
+  {
+    "model": "SanjiWatsuki\/Loyal-Macaroni-Maid-7B",
+    "writing": 0.141
+  },
+  {
+    "model": "migtissera\/Tess-3-Llama-3.1-405B",
+    "writing": 0.139
+  },
+  {
+    "model": "Steelskull\/L3-Aethora-15B",
+    "writing": 0.139
+  },
+  {
+    "model": "google\/gemma-2-9b-it",
+    "writing": 0.139
+  },
+  {
+    "model": "SicariusSicariiStuff\/LLAMA-3_8B_Unaligned_BETA",
+    "writing": 0.138
+  },
+  {
+    "model": "cookinai\/OrcaHermes-Mistral-70B-miqu",
+    "writing": 0.137
+  },
+  {
+    "model": "failspy\/Meta-Llama-3-70B-Instruct-abliterated-v3.5",
+    "writing": 0.137
+  },
+  {
+    "model": "v000000\/L3-8B-UGI-DontPlanToEnd-test",
+    "writing": 0.137
+  },
+  {
+    "model": "NeverSleep\/Llama-3-Lumimaid-70B-v0.1-alt",
+    "writing": 0.136
+  },
+  {
+    "model": "HiroseKoichi\/L3-8B-Lunar-Stheno",
+    "writing": 0.136
+  },
+  {
+    "model": "Qwen\/Qwen1.5-72B-Chat",
+    "writing": 0.136
+  },
+  {
+    "model": "Nitral-AI\/Hathor_Sofit-L3-8B-v1",
+    "writing": 0.136
+  },
+  {
+    "model": "mistralai\/Mixtral-8x22B-v0.1",
+    "writing": 0.135
+  },
+  {
+    "model": "inflatebot\/G2-9B-Blackout-R1",
+    "writing": 0.135
+  },
+  {
+    "model": "Nexusflow\/Athene-70B",
+    "writing": 0.135
+  },
+  {
+    "model": "Steelskull\/G2-DA-Nyxora-27b-V2",
+    "writing": 0.135
+  },
+  {
+    "model": "invisietch\/Nimbus-Miqu-v0.1-70B",
+    "writing": 0.133
+  },
+  {
+    "model": "mlabonne\/Meta-Llama-3.1-8B-Instruct-abliterated",
+    "writing": 0.131
+  },
+  {
+    "model": "crestf411\/llama-3-daybreak-v0.3-70b-hf",
+    "writing": 0.129
+  },
+  {
+    "model": "anthracite-org\/magnum-v3-9b-customgemma2",
+    "writing": 0.129
+  },
+  {
+    "model": "inflatebot\/guns-and-roses-r1",
+    "writing": 0.129
+  },
+  {
+    "model": "nbeerbower\/mistral-nemo-gutenberg-12B-v2",
+    "writing": 0.129
+  },
+  {
+    "model": "NousResearch\/Nous-Hermes-2-Mixtral-8x7B-SFT",
+    "writing": 0.128
+  },
+  {
+    "model": "princeton-nlp\/Llama-3-Instruct-8B-SimPO",
+    "writing": 0.128
+  },
+  {
+    "model": "ABX-AI\/Silver-Sun-v2-11B",
+    "writing": 0.127
+  },
+  {
+    "model": "FluffyKaeloky\/Luminum-v0.1-123B",
+    "writing": 0.126
+  },
+  {
+    "model": "failspy\/Llama-3-70B-Instruct-abliterated-v3",
+    "writing": 0.126
+  },
+  {
+    "model": "NousResearch\/Nous-Hermes-2-Mixtral-8x7B-DPO",
+    "writing": 0.126
+  },
+  {
+    "model": "cognitivecomputations\/dolphin-2.9.4-llama3.1-8b",
+    "writing": 0.126
+  },
+  {
+    "model": "migtissera\/Llama-3-70B-Synthia-v3.5",
+    "writing": 0.125
+  },
+  {
+    "model": "v000000\/Llama-3.1-8B-Stheno-v3.4-abliterated",
+    "writing": 0.125
+  },
+  {
+    "model": "royallab\/ZephRP-m7b",
+    "writing": 0.125
+  },
+  {
+    "model": "NousResearch\/Hermes-2-Theta-Llama-3-8B",
+    "writing": 0.125
+  },
+  {
+    "model": "mradermacher\/bizblend-70b-fresh",
+    "writing": 0.124
+  },
+  {
+    "model": "alicecomfy\/miqu-openhermes-full",
+    "writing": 0.124
+  },
+  {
+    "model": "ryzen88\/Llama-3-70b-Uncensored-Lumi-Tess-gradient",
+    "writing": 0.124
+  },
+  {
+    "model": "jeiku\/Average_Normie_v3.69_8B",
+    "writing": 0.124
+  },
+  {
+    "model": "AiCloser\/Qwen2.5-32B-AGI",
+    "writing": 0.123
+  },
+  {
+    "model": "Sao10K\/MN-BackyardAI-Party-12B-v1",
+    "writing": 0.123
+  },
+  {
+    "model": "NousResearch\/Hermes-3-Llama-3.1-8B",
+    "writing": 0.123
+  },
+  {
+    "model": "anthracite-org\/magnum-v3-9b-chatml",
+    "writing": 0.122
+  },
+  {
+    "model": "meta-llama\/Meta-Llama-3.1-70B-Instruct",
+    "writing": 0.121
+  },
+  {
+    "model": "NeverSleep\/Llama-3-Lumimaid-70B-v0.1",
+    "writing": 0.12
+  },
+  {
+    "model": "MarinaraSpaghetti\/NemoRemix-12B",
+    "writing": 0.12
+  },
+  {
+    "model": "maywell\/kiqu-70b",
+    "writing": 0.12
+  },
+  {
+    "model": "wzhouad\/gemma-2-9b-it-WPO-HB",
+    "writing": 0.12
+  },
+  {
+    "model": "anthracite-org\/magnum-v3-27b-kto",
+    "writing": 0.12
+  },
+  {
+    "model": "ProdeusUnity\/Stellar-Odyssey-12b-v0.0",
+    "writing": 0.12
+  },
+  {
+    "model": "Sao10K\/MN-12B-Lyra-v3",
+    "writing": 0.12
+  },
+  {
+    "model": "CohereForAI\/c4ai-command-r-v01",
+    "writing": 0.118
+  },
+  {
+    "model": "Undi95\/Llama-3-Unholy-8B",
+    "writing": 0.117
+  },
+  {
+    "model": "Undi95\/Toppy-M-7B",
+    "writing": 0.117
+  },
+  {
+    "model": "Casual-Autopsy\/L3-Umbral-Mind-RP-v1.0-8B",
+    "writing": 0.116
+  },
+  {
+    "model": "Casual-Autopsy\/L3-Super-Nova-RP-8B",
+    "writing": 0.116
+  },
+  {
+    "model": "mistralai\/Mistral-7B-Instruct-v0.3",
+    "writing": 0.116
+  },
+  {
+    "model": "google\/gemma-2-2b-it",
+    "writing": 0.115
+  },
+  {
+    "model": "lemon07r\/Gemma-2-Ataraxy-9B",
+    "writing": 0.114
+  },
+  {
+    "model": "AALF\/gemma-2-27b-it-SimPO-37K",
+    "writing": 0.113
+  },
+  {
+    "model": "ParasiticRogue\/Merged-RP-Stew-V2-34B",
+    "writing": 0.111
+  },
+  {
+    "model": "maywell\/PiVoT-0.1-Evil-a",
+    "writing": 0.111
+  },
+  {
+    "model": "SanjiWatsuki\/Kunoichi-DPO-v2-7B",
+    "writing": 0.111
+  },
+  {
+    "model": "TheDrummer\/UnslopNemo-v1",
+    "writing": 0.11
+  },
+  {
+    "model": "Qwen\/Qwen2.5-32B-Instruct",
+    "writing": 0.11
+  },
+  {
+    "model": "concedo\/Mini-Magnum-Unboxed-12B",
+    "writing": 0.109
+  },
+  {
+    "model": "localfultonextractor\/Erosumika-7B",
+    "writing": 0.109
+  },
+  {
+    "model": "BeaverAI\/NeMoistral-12B-v1a",
+    "writing": 0.108
+  },
+  {
+    "model": "mlabonne\/Daredevil-8B-abliterated",
+    "writing": 0.108
+  },
+  {
+    "model": "turboderp\/llama3-turbcat-instruct-8b",
+    "writing": 0.107
+  },
+  {
+    "model": "nbeerbower\/llama-3-gutenberg-8B",
+    "writing": 0.107
+  },
+  {
+    "model": "ParasiticRogue\/RP-Stew-v4.0-34B",
+    "writing": 0.105
+  },
+  {
+    "model": "NeverSleep\/NoromaidxOpenGPT4-2",
+    "writing": 0.105
+  },
+  {
+    "model": "MaziyarPanahi\/Llama-3-70B-Instruct-DPO-v0.4",
+    "writing": 0.105
+  },
+  {
+    "model": "dreamgen\/opus-v1.2-7b",
+    "writing": 0.104
+  },
+  {
+    "model": "nicoboss\/Meta-Llama-3.1-405B-Instruct-Uncensored",
+    "writing": 0.104
+  },
+  {
+    "model": "failspy\/Phi-3-mini-4k-geminified",
+    "writing": 0.104
+  },
+  {
+    "model": "aifeifei798\/llama3-8B-DarkIdol-1.1",
+    "writing": 0.103
+  },
+  {
+    "model": "Undi95\/ReMM-v2.2-L2-13B",
+    "writing": 0.102
+  },
+  {
+    "model": "dnhkng\/RYS-XLarge",
+    "writing": 0.102
+  },
+  {
+    "model": "NeverSleep\/MiquMaid-v2-70B-DPO",
+    "writing": 0.101
+  },
+  {
+    "model": "Undi95\/MXLewd-L2-20B",
+    "writing": 0.101
+  },
+  {
+    "model": "meta-llama\/Llama-3.2-3B-Instruct",
+    "writing": 0.101
+  },
+  {
+    "model": "SicariusSicariiStuff\/2B-ad",
+    "writing": 0.1
+  },
+  {
+    "model": "NeverSleep\/Lumimaid-v0.2-12B",
+    "writing": 0.099
+  },
+  {
+    "model": "Qwen\/Qwen2-7B-Instruct",
+    "writing": 0.099
+  },
+  {
+    "model": "TheDrummer\/Cydonia-22B-v1.1",
+    "writing": 0.097
+  },
+  {
+    "model": "UCLA-AGI\/Llama-3-Instruct-8B-SPPO-Iter3",
+    "writing": 0.097
+  },
+  {
+    "model": "ryzen88\/Llama-3-70b-Arimas-story-RP-V1",
+    "writing": 0.096
+  },
+  {
+    "model": "migtissera\/Tess-3-Llama-3.1-70B",
+    "writing": 0.094
+  },
+  {
+    "model": "failspy\/Codestral-22B-v0.1-abliterated-v3",
+    "writing": 0.094
+  },
+  {
+    "model": "inflatebot\/L3-8B-Helium3",
+    "writing": 0.093
+  },
+  {
+    "model": "nothingiisreal\/MN-12B-Celeste-V1.9",
+    "writing": 0.092
+  },
+  {
+    "model": "Nitral-AI\/Hathor_Stable-v0.2-L3-8B",
+    "writing": 0.09
+  },
+  {
+    "model": "CohereForAI\/c4ai-command-r-plus-08-2024",
+    "writing": 0.089
+  },
+  {
+    "model": "migtissera\/Tess-3-Mistral-Large-2-123B",
+    "writing": 0.089
+  },
+  {
+    "model": "vicgalle\/Roleplay-Hermes-3-Llama-3.1-8B",
+    "writing": 0.089
+  },
+  {
+    "model": "Envoid\/Llama-3-TenyxChat-DaybreakStorywriter-70B",
+    "writing": 0.088
+  },
+  {
+    "model": "CohereForAI\/aya-23-35B",
+    "writing": 0.087
+  },
+  {
+    "model": "Nekochu\/Luminia-8B-RP",
+    "writing": 0.086
+  },
+  {
+    "model": "openchat\/openchat-3.6-8b-20240522",
+    "writing": 0.086
+  },
+  {
+    "model": "anthracite-org\/magnum-v2-32b",
+    "writing": 0.086
+  },
+  {
+    "model": "grimjim\/llama-3-Nephilim-v3-8B",
+    "writing": 0.086
+  },
+  {
+    "model": "TheDrummer\/Moistral-11B-v4",
+    "writing": 0.085
+  },
+  {
+    "model": "mlabonne\/Hermes-3-Llama-3.1-8B-lorablated",
+    "writing": 0.085
+  },
+  {
+    "model": "NousResearch\/Nous-Capybara-3B-V1.9",
+    "writing": 0.085
+  },
+  {
+    "model": "NeverSleep\/Lumimaid-v0.2-8B",
+    "writing": 0.083
+  },
+  {
+    "model": "NousResearch\/Hermes-2-Pro-Llama-3-8B",
+    "writing": 0.082
+  },
+  {
+    "model": "Sao10K\/L3.1-8B-Niitama-v1.1",
+    "writing": 0.082
+  },
+  {
+    "model": "Orenguteng\/Llama-3.1-8B-Lexi-Uncensored-V2",
+    "writing": 0.081
+  },
+  {
+    "model": "SicariusSicariiStuff\/2B_or_not_2B",
+    "writing": 0.081
+  },
+  {
+    "model": "Undi95\/Unholy-v2-13B",
+    "writing": 0.08
+  },
+  {
+    "model": "maywell\/miqu-evil-dpo",
+    "writing": 0.078
+  },
+  {
+    "model": "grimjim\/Llama-3.1-8B-Instruct-abliterated_via_adapter",
+    "writing": 0.078
+  },
+  {
+    "model": "Envoid\/BondBurger-8x7B",
+    "writing": 0.077
+  },
+  {
+    "model": "nothingiisreal\/L3-8B-Celeste-v1",
+    "writing": 0.077
+  },
+  {
+    "model": "Envoid\/Fish-8x7B",
+    "writing": 0.074
+  },
+  {
+    "model": "NeverSleep\/Noromaid-v0.4-Mixtral-Instruct-8x7b-Zloss",
+    "writing": 0.074
+  },
+  {
+    "model": "meta-llama\/Meta-Llama-3.1-8B-Instruct",
+    "writing": 0.071
+  },
+  {
+    "model": "icefog72\/IceSakeRP-7b",
+    "writing": 0.07
+  },
+  {
+    "model": "Qwen\/Qwen2-1.5B-Instruct",
+    "writing": 0.07
+  },
+  {
+    "model": "meta-llama\/Llama-2-70b",
+    "writing": 0.069
+  },
+  {
+    "model": "CohereForAI\/c4ai-command-r-08-2024",
+    "writing": 0.067
+  },
+  {
+    "model": "seb-c\/Psydestroyer-20B",
+    "writing": 0.066
+  },
+  {
+    "model": "ChaoticNeutrals\/T-900-8B",
+    "writing": 0.064
+  },
+  {
+    "model": "SicariusSicariiStuff\/Phi-3.5-mini-instruct_Uncensored",
+    "writing": 0.064
+  },
+  {
+    "model": "IlyaGusev\/gemma-2-2b-it-abliterated",
+    "writing": 0.064
+  },
+  {
+    "model": "ResplendentAI\/Nymph_8B",
+    "writing": 0.06
+  },
+  {
+    "model": "DavidAU\/Llama3-Little-LLM-Of-Horror_N_Fiction-14.6B",
+    "writing": 0.059
+  },
+  {
+    "model": "NeverSleep\/Echidna-13b-v0.3",
+    "writing": 0.058
+  },
+  {
+    "model": "chujiezheng\/Llama-3-Instruct-8B-SimPO-ExPO",
+    "writing": 0.058
+  },
+  {
+    "model": "tokyotech-llm\/Llama-3-Swallow-8B-Instruct-v0.1",
+    "writing": 0.057
+  },
+  {
+    "model": "meta-llama\/Meta-Llama-3.1-70B",
+    "writing": 0.056
+  },
+  {
+    "model": "ifable\/gemma-2-Ifable-9B",
+    "writing": 0.055
+  },
+  {
+    "model": "nothingiisreal\/L3.1-70B-Celeste-V0.1-BF16",
+    "writing": 0.054
+  },
+  {
+    "model": "HuggingFaceTB\/SmolLM-1.7B-Instruct",
+    "writing": 0.053
+  },
+  {
+    "model": "FPHam\/L3-8B-Everything-COT",
+    "writing": 0.052
+  },
+  {
+    "model": "failspy\/Phi-3-mini-128k-instruct-abliterated-v3",
+    "writing": 0.051
+  },
+  {
+    "model": "nothingiisreal\/Celeste-12B-V1.6",
+    "writing": 0.049
+  },
+  {
+    "model": "microsoft\/Phi-3.5-mini-instruct",
+    "writing": 0.049
+  },
+  {
+    "model": "teknium\/OpenHermes-2.5-Mistral-7B",
+    "writing": 0.048
+  },
+  {
+    "model": "abacusai\/Liberated-Qwen1.5-72B",
+    "writing": 0.046
+  },
+  {
+    "model": "Orenguteng\/Llama-3.1-8B-Lexi-Uncensored",
+    "writing": 0.041
+  },
+  {
+    "model": "mistralai\/Mistral-Nemo-Base-2407",
+    "writing": 0.032
+  },
+  {
+    "model": "Weyaxi\/Einstein-v7-Qwen2-7B",
+    "writing": 0.031
+  },
+  {
+    "model": "cognitivecomputations\/dolphin-2.9.4-gemma2-2b",
+    "writing": 0.029
+  },
+  {
+    "model": "SicariusSicariiStuff\/Impish_LLAMA_3B",
+    "writing": 0.027
+  },
+  {
+    "model": "jebcarter\/psyonic-cetacean-20B",
+    "writing": 0.026
+  },
+  {
+    "model": "microsoft\/Phi-3.1-mini-4k-instruct",
+    "writing": 0.025
+  },
+  {
+    "model": "databricks\/dbrx-base",
+    "writing": 0.024
+  },
+  {
+    "model": "SicariusSicariiStuff\/Tinybra_13B",
+    "writing": 0.024
+  },
+  {
+    "model": "yukiarimo\/yuna-ai-v3-atomic",
+    "writing": 0.022
+  },
+  {
+    "model": "Gryphe\/Pantheon-RP-1.6-12b-Nemo",
+    "writing": 0.021
+  },
+  {
+    "model": "migtissera\/Tess-3-Mistral-Nemo-12B",
+    "writing": 0.021
+  },
+  {
+    "model": "SicariusSicariiStuff\/Tenebra_30B_Alpha01_FP16",
+    "writing": 0.02
+  },
+  {
+    "model": "maywell\/Synatra-7B-v0.3-RP",
+    "writing": 0.019
+  },
+  {
+    "model": "berkeley-nest\/Starling-LM-7B-alpha",
+    "writing": 0.019
+  },
+  {
+    "model": "lizpreciatior\/lzlv_70b_fp16_hf",
+    "writing": 0.018
+  },
+  {
+    "model": "meta-llama\/Meta-Llama-3.1-8B",
+    "writing": 0.018
+  },
+  {
+    "model": "google\/gemma-7b-it",
+    "writing": 0.018
+  },
+  {
+    "model": "meta-llama\/Meta-Llama-3-8B",
+    "writing": 0.016
+  },
+  {
+    "model": "nothingiisreal\/L3-8B-Celeste-V1.2",
+    "writing": 0.016
+  },
+  {
+    "model": "yukiarimo\/yuna-ai-v3",
+    "writing": 0.012
+  },
+  {
+    "model": "jsgreenawalt\/gemma-2-9B-it-advanced-v2.1",
+    "writing": 0.011
+  },
+  {
+    "model": "Qwen\/Qwen2-0.5B-Instruct",
+    "writing": 0.009
+  }
+]

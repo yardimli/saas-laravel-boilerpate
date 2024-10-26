@@ -1,0 +1,26 @@
+{
+    "column": "finished",
+    "order": "0",
+    "title": "create new logo",
+    "text": "new logo",
+    "owner": "Ekim",
+    "backgroundColor": "#F28B82",
+    "textColor": "#000000",
+    "created": "2024-10-22 06:16:28",
+    "lastUpdated": "2024-10-23 11:12:40",
+    "comments": [],
+    "files": [],
+    "history": [
+        {
+            "action": "Created story",
+            "user": "Ekim",
+            "timestamp": "2024-10-22 06:16:28"
+        },
+        {
+            "action": "Moved card to finished",
+            "user": "Ekim",
+            "timestamp": "2024-10-23 11:12:40"
+        }
+    ],
+    "archived": false
+}

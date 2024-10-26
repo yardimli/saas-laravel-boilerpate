@@ -1,0 +1,176 @@
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --card-background: #fff;
+    --column-background: #f4f4f4;
+    --card-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    --modal-background: #fff;
+    --modal-header-background: #f8f9fa;
+    --modal-text-color: #000;
+    --modal-border-bottom-color: #dee2e6;
+    --input-background: #fff;
+    --input-text-color: #000;
+    --input-border-color: #ced4da;
+    --alert-success-background: #d4edda;
+    --alert-success-text: #155724;
+
+    --scrollbar-width: 8px;
+    --scrollbar-track-color: #f4f4f4;
+    --scrollbar-thumb-color: #ced4da;
+    --scrollbar-thumb-hover-color: #a1a1a1;
+}
+
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #fff;
+    --card-background: #1e1e1e;
+    --column-background: #333;
+    --card-box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    --modal-background: #2c2c2c;
+    --modal-header-background: #333;
+    --modal-text-color: #fff;
+    --modal-border-bottom-color: #444;
+    --input-background: #333;
+    --input-text-color: #fff;
+    --input-border-color: #444;
+    --alert-success-background: #155724;
+    --alert-success-text: #d4edda;
+
+    --scrollbar-track-color: #333;
+    --scrollbar-thumb-color: #555;
+    --scrollbar-thumb-hover-color: #777;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 10px;
+    border: 2px solid var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-color);
+}
+
+
+
+.kanban-board {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.kanban-column {
+    width: 23%;
+    background: var(--column-background);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.kanban-card {
+    background: var(--card-background);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: var(--card-box-shadow);
+}
+
+.kanban-column-ul {
+    list-style-type: none;
+    padding: 0;
+    min-height: 100%;
+}
+
+.kanban-card {
+    position: relative;
+}
+
+.kanban-card .move-to-top-btn {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+}
+
+.kanban-card:hover .move-to-top-btn {
+    display: block;
+}
+
+.kanban-card .archive-btn {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 10;
+}
+
+.kanban-card:hover .archive-btn {
+    display: block;
+}
+
+
+/* Modal styles */
+
+.modal-content {
+    background-color: var(--modal-background);
+    color: var(--modal-text-color);
+}
+
+
+.modal-header {
+    background-color: var(--modal-header-background);
+    color: var(--modal-text-color);
+    border-bottom: 1px solid var(--modal-border-bottom-color);
+}
+
+
+.modal-body {
+    color: var(--modal-text-color);
+}
+
+
+.modal-footer {
+    background-color: var(--modal-header-background);
+    color: var(--modal-text-color);
+}
+
+
+.btn-close {
+    filter: invert(100%);
+}
+
+
+/* Form element styles */
+
+input, textarea, select {
+    background-color: var(--input-background) !important;
+    color: var(--input-text-color) !important;
+    border-color: var(--input-border-color) !important;
+}
+
+
+input::placeholder, textarea::placeholder {
+    color: var(--input-text-color) !important;
+}
+
+/* Alert styles */
+.alert-success {
+    background-color: var(--alert-success-background);
+    color: var(--alert-success-text);
+}
+

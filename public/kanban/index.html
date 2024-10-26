@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Git Kanban Board</title>
+
+	<!-- FAVICON AND TOUCH ICONS -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
+
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-icons.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="css/custom.css" rel="stylesheet"> <!-- If you have custom CSS -->
+	
+	<!-- Redirect script -->
+	<script>
+			var pathname = window.location.pathname;
+			if (!pathname.endsWith("index.html")) {
+				if (!pathname.endsWith("/")) {
+					pathname += "/";
+				}
+				window.location.href = pathname + "index.html";
+			}
+	</script>
+
+</head>
+<body>
+<header>
+	<form id="logoutForm" action="action.php" method="POST" class="d-none">
+		<input type="hidden" name="action" value="logout">
+	</form>
+	<div class="container-fluid mt-2">
+		<button class="btn btn-info float-start me-2" id="showAllHistoryBtn" title="show all history"><i class="bi bi-clock-history"></i></button>
+		<button class="btn btn-secondary float-start me-2" data-bs-toggle="modal" data-bs-target="#addUserModal" title="add user modal"><i class="bi bi-person"></i></button>
+		<button class="btn btn-info float-start me-2" id="toggleArchivedBtn"><i class="bi bi-archive"></i></button>
+
+		<a href="#" class="btn btn-danger float-end ms-2" title="Log out" onclick="document.getElementById('logoutForm').submit();"><i class="bi bi-door-open"></i></a>
+		<button id="modeToggleBtn" class="btn btn-secondary float-end ms-2">
+			<i id="modeIcon" class="bi bi-sun"></i>
+		</button>
+		<button class="btn btn-primary float-end ms-2" id="addStoryBtn" title="add new story"><i class="bi bi-plus-circle-fill"></i></button>
+	</div>
+</header>
+
+<main class="py-4">
+
+	<div class="container mt-2">
+		<h1 style="margin:10px;" class="text-center"><img src="images/android-chrome-192x192.png" style="height: 64px;"> Git
+			Kanban Board</h1>
+		<div>
+			<div class="my-3 d-inline-block">
+				Hello <span id="currentUser"></span>,
+			</div>
+		</div>
+
+		<div class="kanban-board" id="kanbanBoard">
+		</div>
+
+	</div>
+
+	<!-- Modal for Adding/Editing Stories -->
+	<div class="modal modal-lg fade" id="storyModal" tabindex="-1" aria-labelledby="storyModalLabel" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="storyModalLabel">Add Story</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form id="storyForm" enctype="multipart/form-data">
+						<input type="hidden" id="storyFilename">
+						<div class="mb-3">
+							<label for="storyTitle" class="form-label">Title</label>
+							<input type="text" class="form-control" id="storyTitle" required>
+						</div>
+						<div class="mb-3">
+							<label for="storyText" class="form-label">Text</label>
+							<textarea class="form-control" id="storyText" rows="3" required></textarea>
+						</div>
+						<div class="mb-3">
+							<label for="storyOwner" class="form-label">Owner</label>
+							<select class="form-control" id="storyOwner" required>
+								<!-- Options will be populated dynamically -->
+							</select>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Background Color</label>
+							<div id="colorPalette" class="d-flex flex-wrap">
+								<!-- Color buttons will be inserted here dynamically -->
+							</div>
+						</div>
+						<input type="hidden" id="storyBackgroundColor">
+						<input type="hidden" id="storyTextColor">
+						<div class="mb-3">
+							<label for="storyFiles" class="form-label">Upload Files</label>
+							<input type="file" class="form-control" id="storyFiles" name="storyFiles[]" multiple>
+						</div>
+						<div id="save_result"></div>
+						<button type="submit" class="btn btn-primary">Save Story</button>
+						<button class="btn btn-secondary" id="showCommentModal">Add Comment</button>
+						<button class="btn btn-info" id="showHistoryModal">View History</button>
+						<button type="button" class="btn btn-danger float-end " id="deleteStoryBtn">Delete Story</button>
+					</form>
+					<div class="comments-section">
+						<hr>
+						<h5>Comments</h5>
+						<div id="commentsList"></div>
+					</div>
+					<div class="upload-files-section">
+						<hr>
+						<h5>Files</h5>
+						<div id="UploadFilesList" class="row"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal for Adding User -->
+	<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="addUserModalLabel">Add User</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form id="addUserForm">
+						<div class="mb-3">
+							<label for="userName" class="form-label">Username</label>
+							<input type="text" class="form-control" id="userName" required>
+						</div>
+						<div class="mb-3">
+							<label for="userPassword" class="form-label">Password</label>
+							<input type="password" class="form-control" id="userPassword" required>
+						</div>
+						<button type="button" class="btn btn-primary" id="generateUser">Generate</button>
+					</form>
+					<div class="mt-3">
+						<pre id="userJsonOutput"></pre>
+						<button type="button" class="btn btn-secondary" id="copyUserJson">Copy</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Adding Comment -->
+	<div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="commentModalLabel">Add Comment</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form id="commentForm">
+						<input type="hidden" id="commentStoryFilename">
+						<input type="hidden" id="commentId">
+						<div class="mb-3">
+							<label for="commentText" class="form-label">Comment</label>
+							<textarea class="form-control" id="commentText" rows="3" required></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Save Comment</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Confirmation Modal for Deleting Story -->
+	<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Deletion</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Are you sure you want to delete this story? This action cannot be undone.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Viewing History -->
+	<div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="historyModalLabel">History</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body" style="max-height: 400px; overflow: auto;">
+					<div id="historyList"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Viewing All History -->
+	<div class="modal fade" id="allHistoryModal" tabindex="-1" aria-labelledby="allHistoryModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-scrollable modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="allHistoryModalLabel">All History</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body" style="max-height: 400px; overflow: auto;">
+					<div id="allHistoryList"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+
+<!-- jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="js/jquery-3.7.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/sortable.min.js"></script>
+
+<!-- Your custom scripts -->
+<script src="js/custom.js"></script> <!-- If you have custom JS -->
+</body>
+</html>

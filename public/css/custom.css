@@ -1,0 +1,304 @@
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --card-background: #fff;
+    --row-background: #f4f4f4;
+    --card-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    --modal-background: #f5f5f5;
+    --dropdown-menu-background: #f5f5f5;
+    --dropdown-hover-background-color: #ddd;
+
+    --darker-bg: #e5e5e5;
+
+    --book-list-background: #e5e5e5;
+    --modal-header-background: #f8f9fa;
+    --modal-text-color: #000;
+    --dropdown-text-color: #111;
+    --modal-border-bottom-color: #dee2e6;
+    --input-background: #fff;
+    --input-text-color: #000;
+    --input-border-color: #ced4da;
+    --alert-success-background: #d4edda;
+    --alert-success-text: #155724;
+
+    --scrollbar-width: 8px;
+    --scrollbar-track-color: #f4f4f4;
+    --scrollbar-thumb-color: #ced4da;
+    --scrollbar-thumb-hover-color: #a1a1a1;
+}
+
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #fff;
+    --card-background: #1e1e1e;
+    --row-background: #333;
+    --card-box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    --modal-background: #2c2c2c;
+    --dropdown-menu-background: #4c4c4c;
+    --dropdown-hover-background-color: #666;
+
+    --darker-bg: #333;
+
+    --book-list-background: #4c4c4c;
+
+    --modal-header-background: #333;
+    --modal-text-color: #fff;
+    --dropdown-text-color: #eee;
+    --modal-border-bottom-color: #444;
+    --input-background: #333;
+    --input-text-color: #fff;
+    --input-border-color: #444;
+    --alert-success-background: #155724;
+    --alert-success-text: #d4edda;
+
+    --scrollbar-track-color: #333;
+    --scrollbar-thumb-color: #555;
+    --scrollbar-thumb-hover-color: #777;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.site-theme-div {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 10px;
+    border: 2px solid var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-color);
+}
+
+.darker-bg {
+    background-color: var(--darker-bg) !important;
+}
+
+.book-chapter-board {
+    display: block;
+    width: 100%;
+}
+
+.book-chapter-act {
+    width: 100%;
+    background: var(--row-background);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.book-chapter-act-ul {
+    padding: 0;
+    min-height: 100px;
+    width: 100%;
+}
+
+.general-card {
+    position: relative;
+    background: var(--card-background);
+    padding: 0px;
+    margin: 0px 0px 30px;
+    border-radius: 5px;
+    box-shadow: var(--card-box-shadow);
+    width: 100%;
+}
+
+.book-chapter-card {
+    position: relative;
+    background: var(--card-background);
+    padding: 10px;
+    margin: 0px 0px 5px;
+    border-radius: 5px;
+    box-shadow: var(--card-box-shadow);
+    width: 100%;
+
+}
+
+
+.book-chapter-card .archive-btn {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 10;
+}
+
+.book-chapter-card:hover .archive-btn {
+    display: block;
+}
+
+
+/* Modal styles */
+
+.book-list-small-container-color {
+    border-color: var(--dropdown-menu-background) !important;
+    background-color: var(--book-list-background) !important;
+    color: var(--modal-text-color) !important;
+}
+
+
+.dropdown-menu-color {
+    background-color: var(--dropdown-menu-background) !important;
+    color: var(--modal-text-color) !important;
+}
+
+.dropdown-item-color {
+    color: var(--dropdown-text-color) !important;
+}
+
+.dropdown-item-color:hover {
+    background-color: var(--dropdown-hover-background-color) !important;
+    color: var(--dropdown-text-color) !important;
+}
+
+
+.modal-content-color {
+    background-color: var(--modal-background) !important;
+    color: var(--modal-text-color) !important;
+}
+
+.bg-grey-custom {
+    background-color: var(--modal-background) !important;
+    color: var(--modal-text-color) !important;
+}
+
+.modal-header-color {
+    background-color: var(--modal-header-background) !important;
+    color: var(--modal-text-color) !important;
+    border-bottom: 1px solid var(--modal-border-bottom-color) !important;
+}
+
+.modal-header-color.active {
+    background-color: var(--dropdown-menu-background) !important;
+}
+
+
+.modal-body-color {
+    color: var(--modal-text-color);
+}
+
+
+.modal-footer-color {
+    background-color: var(--modal-header-background);
+    color: var(--modal-text-color);
+}
+
+
+.btn-close {
+    /*filter: invert(100%);*/
+}
+
+
+/* Form element styles */
+
+input[type="text"], textarea, select {
+    background-color: var(--input-background) !important;
+    color: var(--input-text-color) !important;
+    border-color: var(--input-border-color) !important;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--input-text-color) !important;
+}
+
+/* Alert styles */
+.alert-success {
+    background-color: var(--alert-success-background);
+    color: var(--alert-success-text);
+}
+
+
+
+/* 888888888888888888888888 */
+
+#fullScreenOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    text-align: center;
+}
+
+.table.book-overview tr th {
+    color: var(--text-color);
+}
+
+.tabs-site-button .nav-tabs a {
+    color: var(--text-color);
+}
+
+.bookmark-btn .form-check-label {
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+.book-grid-row.style-4 .dz-box .dz-content .dz-body .book-detail .book-info li
+{
+    color: var(--text-color);
+}
+
+.filter-area .category .filter-category a {
+    color: var(--text-color);
+}
+
+.footer-category .toggle-items ul li a {
+    color: var(--text-color);
+}
+
+.dz-shop-card.style-2 .dz-content .dz-body .rate .book-info li
+{
+    color: var(--text-color);
+}
+
+
+.zero-left-padding-on-mobile {
+    padding-right: 0px !important;
+    padding-left: 3px !important;
+}
+
+.zero-right-padding-on-mobile {
+    padding-left: 0px !important;
+    padding-right: 3px !important;
+}
+
+@media (max-width: 767px) {
+    .pagination .page-item.desktop-only {
+        display: none;
+    }
+
+    .zero-left-padding-on-mobile {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .zero-right-padding-on-mobile {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+}

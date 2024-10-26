@@ -1,0 +1,21 @@
+{
+    "column": "to-do",
+    "order": "4",
+    "title": "Rerun the lang creator",
+    "text": "Rerun the lang creator job",
+    "owner": "Ekim",
+    "backgroundColor": "#F28B82",
+    "textColor": "#000000",
+    "created": "2024-10-22 06:13:59",
+    "lastUpdated": "2024-10-22 06:13:59",
+    "comments": [],
+    "files": [],
+    "history": [
+        {
+            "action": "Created story",
+            "user": "Ekim",
+            "timestamp": "2024-10-22 06:13:59"
+        }
+    ],
+    "archived": false
+}

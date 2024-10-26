@@ -1,0 +1,31 @@
+{
+    "column": "finished",
+    "order": "1",
+    "title": "Add lang dropdown",
+    "text": "Add lang dropdown form everperfect",
+    "owner": "Ekim",
+    "backgroundColor": "#F28B82",
+    "textColor": "#000000",
+    "created": "2024-10-22 06:14:20",
+    "lastUpdated": "2024-10-23 11:37:01",
+    "comments": [],
+    "files": [],
+    "history": [
+        {
+            "action": "Created story",
+            "user": "Ekim",
+            "timestamp": "2024-10-22 06:14:20"
+        },
+        {
+            "action": "Moved card to in-progress",
+            "user": "Ekim",
+            "timestamp": "2024-10-23 11:12:46"
+        },
+        {
+            "action": "Moved card to finished",
+            "user": "Ekim",
+            "timestamp": "2024-10-23 11:37:01"
+        }
+    ],
+    "archived": false
+}

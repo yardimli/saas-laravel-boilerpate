@@ -1,0 +1,74 @@
+===Shop FAQ
+
+Q1: What is SAAS LARAVEL BOILERPLATE?
+A1: SAAS LARAVEL BOILERPLATE is a platform that allows users to sign up and use GPT technology to write stories. Users can purchase different packages based on their needs, and the platform will generate stories using GPT-3.5 or GPT-4.
+
+Q2: What is the difference between GPT 3.5 and GPT 4.0?
+A2: GPT 3.5 and GPT 4.0 are different versions of Generative Pre-trained Transformer technology. GPT 4.0 is a more advanced version than GPT 3.5, which could result in higher-quality and more creative text output. Both versions can be used with the packages purchased on SAAS LARAVEL BOILERPLATE.
+
+Q3: Do tokens expire?
+A4: Yes, tokens expire based on the package you purchase. In the Short Stories Pack, tokens expire after 3 months. For the Novella Pack, tokens expire after 6 months, and in the Novel Pack, tokens expire after a year.
+
+Q5: Are my stories private?
+A5: Novella Pack and Novel Pack packages offered by SAAS LARAVEL BOILERPLATE come with the private story feature. This means that the stories generated using the purchased tokens will only be accessible to you and will not be made public on the platform.
+
+Q6: How do I purchase a package?
+A6: To purchase a package, sign up on the SAAS LARAVEL BOILERPLATE website and select the desired package. Follow the prompts to complete the payment process and start generating stories using the purchased tokens.
+
+Q7: Can I upgrade or downgrade my package later?
+A8: You can purchase additional packages to get more tokens and extend the expiry period. However, please contact SAAS LARAVEL BOILERPLATE's support team for specific details on downgrading packages.
+
+Q9: Is there a limit to the number of stories I can create with a package?
+A10: There is no limit to the number of stories you can create within the allocated token limits for each package. Your token consumption will depend on the length of the generated stories, and you can create as many stories as your tokens allow.
+
+Q11: What happens if I run out of tokens for a specific GPT version?
+A11: If you run out of tokens for one version, you can still use the remaining tokens for the other version, provided they have not expired. If you need more tokens for the desired version, you can purchase additional packages to replenish your token balance.
+
+Q12: Do I retain the rights to the stories I create on SAAS LARAVEL BOILERPLATE?
+A12: As a general rule, you retain the rights to the stories you create using SAAS LARAVEL BOILERPLATE's services. However, it is essential to review the platform's terms and conditions for specific details regarding content ownership and licensing.
+
+Q13: Are there any content restrictions or limitations on the type of stories generated on SAAS LARAVEL BOILERPLATE?
+A13: SAAS LARAVEL BOILERPLATE aims to provide a creative and inclusive platform for story generation. However, users are expected to adhere to the platform's guidelines and avoid creating content that is harmful, offensive, or illegal. Please refer to SAAS LARAVEL BOILERPLATE's terms and conditions for more details on content restrictions.
+
+Q14: Can I use SAAS LARAVEL BOILERPLATE for non-fiction writing or other types of content generation?
+A14: While SAAS LARAVEL BOILERPLATE is primarily designed for generating fictional stories, the GPT-powered technology can also be used creatively for other types of content. Keep in mind that the platform might not be specifically optimized for non-fiction writing or other content types, so results may vary.
+
+Q15: Is there customer support available if I have questions or run into issues?
+A15: Yes, SAAS LARAVEL BOILERPLATE offers customer support to assist users with any questions or issues they might encounter while using the platform. Please reach out to the support team if you require assistance with your account, generating stories, or understanding package features and limitations.
+
+Q16: Are my personal and payment details secure on SAAS LARAVEL BOILERPLATE?
+A16: SAAS LARAVEL BOILERPLATE is committed to ensuring the privacy and security of users' personal and payment information. The platform adheres to industry-standard security practices to protect your data. For more information on privacy and security measures, please refer to SAAS LARAVEL BOILERPLATE's privacy policy and terms and conditions.
+
+Q17: How can I keep track of my token usage?
+A17: Your SAAS LARAVEL BOILERPLATE account will display your current token balance, allowing you to monitor your token usage and remaining tokens for both GPT 3.5 and GPT 4.0. This information will help you plan your story generation and ensure you stay within your package's token limits.
+
+Q18: Can I publish and sell a book created with SAAS LARAVEL BOILERPLATE's generated stories?
+A18: Yes, you can publish and sell books created using SAAS LARAVEL BOILERPLATE's story generation services. However, ensure you adhere to any applicable copyright laws and guidelines in your jurisdiction. Also, it is a good practice to thoroughly review and edit the generated content to ensure quality and originality before publishing.
+
+Q22: Can I share my tokens with other users or transfer them to another account?
+A22: No, tokens are non-transferable and can only be used by the account holder who purchased the package.
+
+Q23: What if I don't use all my tokens before they expire?
+A23: Unused tokens will expire after the specified duration (3 months, 6 months, or a year) and cannot be carried over to a new package. To make the most of your tokens, we recommend using them before the expiration date.
+
+Q24: What is the Control Initial Prompt feature?
+A24: The Control Initial Prompt feature, coming soon, allows you to set the starting point of a story and guide the AI's suggestions and rewrites. This helps you steer the AI's direction when crafting a narrative, ensuring the story aligns with your desired theme or plot.
+
+Q25: How do I use my own OpenAI key?
+A25: The option to use your own OpenAI key is coming soon. When available, you can enter your OpenAI key in your account settings. This will allow you to use your own tokens and make payments directly to OpenAI for their usage, bypassing the tokens supplied by SAAS LARAVEL BOILERPLATE. Please note that this feature requires annual renewal.
+
+Q26: Can I get a refund if I'm not satisfied with the service?
+A26: We strive to provide the best possible experience for our users. If you're not satisfied with the service, please contact our customer support team to discuss your concerns and explore possible solutions. Refunds will be considered on a case-by-case basis.
+
+Q27: Can I upgrade my package at any time?
+A27: Yes, you can upgrade your package at any time. When you upgrade, the remaining tokens from your current package will be added to the new package, and the expiration date will be adjusted accordingly.
+
+Q29: Can I use the generated content for commercial purposes?
+A29: Yes, you can use the content generated by our AI models for commercial purposes, such as publishing, marketing, or selling your work. However, we recommend reviewing and editing the content to ensure its quality and originality before using it for commercial purposes.
+
+Q30: Is there a limit to the length of a story I can generate?
+A30: The length of the story you can generate depends on the number of tokens available in your package. Each package has a specific number of tokens that can be used for generating content. Keep in mind that longer stories will consume more tokens, so plan your content accordingly.
+
+
+Q32: Can I collaborate with other users on a story?
+A32: Yes you can set the flag "Allow others to continue writing" to true.

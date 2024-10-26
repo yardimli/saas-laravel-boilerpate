@@ -1,0 +1,26 @@
+{
+    "column": "in-progress",
+    "order": "1",
+    "title": "Add Image generation to top menu",
+    "text": "add flux image gen test to top menu",
+    "owner": "Ekim",
+    "backgroundColor": "#F28B82",
+    "textColor": "#000000",
+    "created": "2024-10-22 06:16:14",
+    "lastUpdated": "2024-10-23 11:42:52",
+    "comments": [],
+    "files": [],
+    "history": [
+        {
+            "action": "Created story",
+            "user": "Ekim",
+            "timestamp": "2024-10-22 06:16:14"
+        },
+        {
+            "action": "Moved card to in-progress",
+            "user": "Ekim",
+            "timestamp": "2024-10-23 11:42:52"
+        }
+    ],
+    "archived": false
+}
