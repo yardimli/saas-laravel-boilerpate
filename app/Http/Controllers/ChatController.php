@@ -3,6 +3,8 @@
 	namespace App\Http\Controllers;
 
 	use App\Helpers\MyHelper;
+	use App\Models\ChatMessage;
+	use App\Models\ChatSession;
 	use Carbon\Carbon;
 	use GuzzleHttp\Client;
 	use Illuminate\Http\Request;
@@ -22,115 +24,111 @@
 
 		public function checkLLMsJson()
 		{
-			$llmsJsonPath = Storage::disk('public')->path('llms.json');
-
-			if (!File::exists($llmsJsonPath) || Carbon::now()->diffInDays(Carbon::createFromTimestamp(File::lastModified($llmsJsonPath))) > 1) {
-				$client = new Client();
-				$response = $client->get('https://openrouter.ai/api/v1/models');
-				$data = json_decode($response->getBody(), true);
-
-				if (isset($data['data'])) {
-					File::put($llmsJsonPath, json_encode($data['data']));
-				} else {
-					return response()->json([]);
-				}
-			}
-
-			$openrouter_admin_or_key = false;
-			if ((Auth::user() && Auth::user()->isAdmin()) ||
-				(Auth::user() && !empty(Auth::user()->openrouter_key))) {
-				$openrouter_admin_or_key = true;
-			}
-
-			$llms_with_rank_path = resource_path('data/llms_with_rank.json');
-			$llms_with_rank = json_decode(File::get($llms_with_rank_path), true);
-
-			$llms = json_decode(File::get($llmsJsonPath), true);
-			$filtered_llms = array_filter($llms, function ($llm) use ($openrouter_admin_or_key) {
-				if (isset($llm['id']) && (stripos($llm['id'], 'openrouter/auto') !== false)) {
-					return false;
-				}
-
-				if (isset($llm['id']) && (stripos($llm['id'], 'vision') !== false)) {
-					return false;
-				}
-
-				if (isset($llm['id']) && (stripos($llm['id'], '-3b-') !== false)) {
-					return false;
-				}
-
-				if (isset($llm['id']) && (stripos($llm['id'], '-1b-') !== false)) {
-					return false;
-				}
-
-				if (isset($llm['id']) && (stripos($llm['id'], 'online') !== false)) {
-					return false;
-				}
-
-				if (isset($llm['id']) && (stripos($llm['id'], 'gpt-3.5') !== false)) {
-					return false;
-				}
-
-				if (isset($llm['pricing']['completion'])) {
-					$price_per_million = floatval($llm['pricing']['completion']) * 1000000;
-					if ($openrouter_admin_or_key) {
-						return $price_per_million <= 20;
-					} else {
-						return $price_per_million <= 1.5;
-					}
-				}
-
-				if (!isset($llm['pricing']['completion'])) {
-					return false;
-				}
-
-				return true;
-			});
-
-			foreach ($filtered_llms as &$filtered_llm) {
-				$found_rank = false;
-				foreach ($llms_with_rank as $llm_with_rank) {
-					if ($filtered_llm['id'] === $llm_with_rank['id']) {
-						$filtered_llm['score'] = $llm_with_rank['score'] ?? 0;
-						$filtered_llm['ugi'] = $llm_with_rank['ugi'] ?? 0;
-						$found_rank = true;
-					}
-				}
-				if (!$found_rank) {
-					$filtered_llm['score'] = 0;
-					$filtered_llm['ugi'] = 0;
-				}
-			}
-
-			// Sort $filtered_llms by score, then alphabetically for score 0
-			usort($filtered_llms, function ($a, $b) {
-				// First, compare by score in descending order
-				$scoreComparison = $b['score'] <=> $a['score'];
-
-				// If scores are different, return this comparison
-				if ($scoreComparison !== 0) {
-					return $scoreComparison;
-				}
-
-				// If scores are the same (particularly both 0), sort alphabetically by name
-				return strcmp($a['name'], $b['name']);
-			});
-
-			//for each llm with score 0 sort them alphabetically
-			return response()->json(array_values($filtered_llms));
+			$checkLLMs = MyHelper::checkLLMsJson();
+			return response()->json($checkLLMs);
 		}
+
+		public function createSession(Request $request) {
+			$chatSession = ChatSession::create([
+				'session_id' => (string) Str::uuid(), // Generate UUID for session_id
+				'user_id' => Auth::id(),
+				'created_at' => now(),
+				'updated_at' => now(),
+			]);
+
+			return response()->json(['session_id' => $chatSession->session_id]); // Return session_id instead of id
+		}
+
+		public function getChatSessions()
+		{
+			$sessions = ChatSession::where('user_id', Auth::id())
+				->whereHas('messages', function($query) {
+					$query->where('id', '>', 1);  // Or any other condition you might want
+				})
+				->with(['messages' => function($query) {
+					$query->orderBy('created_at', 'asc');
+				}])
+				->orderBy('updated_at', 'desc')
+				->get();
+
+			return response()->json($sessions);
+		}
+
+		public function getChatMessages($sessionId) {
+
+			$chatSession = ChatSession::where('session_id', $sessionId)
+				->where('user_id', Auth::id())
+				->first();
+
+			$session_id = $chatSession->id;
+
+			$messages = ChatMessage::where('session_id', $session_id)
+				->orderBy('created_at', 'asc')
+				->get();
+
+			return response()->json($messages);
+		}
+
 
 		public function sendLlmPrompt(Request $request)
 		{
 			$userPrompt = $request->input('user_prompt');
+			$sessionId = $request->input('session_id');
 			$llm = $request->input('llm');
 
+			$chatSession = ChatSession::where('session_id', $sessionId)
+				->where('user_id', Auth::id())
+				->first();
+
+			if (!$chatSession) {
+				return response()->json(['success' => false, 'message' => 'Invalid session']);
+			}
+
+			$session_id = $chatSession->id;
+
 			try {
-				$resultData = MyHelper::llm_no_tool_call($llm, '', $userPrompt, false);
+				// Fetch previous messages from the session
+				$chatHistory = ChatMessage::where('session_id', $session_id)
+					->orderBy('created_at')
+					->get();
+				$chat_history = [];
+				foreach ($chatHistory as $msg) {
+					$chat_history[] = [
+						'role' => $msg->role,
+						'content' => $msg->message,
+					];
+				}
+				//add user prompt to the chat history
+				$chat_history[] = [
+					'role' => 'user',
+					'content' => $userPrompt,
+				];
+
+				$resultData = MyHelper::llm_no_tool_call($llm, '', $chat_history, false);
 
 				if (isset($resultData->error)) {
 					return response()->json(['success' => false, 'message' => $resultData->error]);
 				}
+
+				// Save the user's prompt and assistant's response to the database
+				ChatMessage::create([
+					'session_id' => $session_id,
+					'role' => 'user',
+					'message' => $userPrompt,
+					'llm' => $llm,
+					'prompt_tokens' => 0,
+					'completion_tokens' => 0
+				]);
+
+				ChatMessage::create([
+					'session_id' => $session_id,
+					'role' => 'assistant',
+					'message' => $resultData['content'],
+					'llm' => $llm,
+					'prompt_tokens' => $resultData['prompt_tokens'] ?? 0,
+					'completion_tokens' => $resultData['completion_tokens'] ?? 0
+				]);
+
 
 				return response()->json(['success' => true, 'result' => $resultData]);
 			} catch (\Exception $e) {
@@ -138,14 +136,33 @@
 			}
 		}
 
-		public function index(Request $request)
+		public function destroy($sessionId)
 		{
-			//check if user is logged in
-			if (Auth::check()) {
-				return view('user.chat');
-			} else {
+			$chatSession = ChatSession::where('session_id', $sessionId)
+				->where('user_id', Auth::id())
+				->first();
+
+			if (!$chatSession) {
+				return response()->json(['success' => false, 'message' => 'Session not found']);
+			}
+
+			// Delete associated messages first
+			ChatMessage::where('session_id', $chatSession->id)->delete();
+
+			// Delete the session
+			$chatSession->delete();
+
+			return response()->json(['success' => true]);
+		}
+
+
+		public function index(Request $request, $session_id = null)
+		{
+			if (!Auth::check()) {
 				return redirect()->route('login');
 			}
+
+			return view('user.chat', ['current_session_id' => $session_id]);
 		}
 
 	}

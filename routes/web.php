@@ -1,20 +1,13 @@
 <?php
 
-	use App\Http\Controllers\BookActionController;
-	use App\Http\Controllers\BookBeatController;
-	use App\Http\Controllers\BookCodexController;
 	use App\Http\Controllers\ChatController;
-	use App\Http\Controllers\DreamStudioController;
-	use App\Http\Controllers\JobController;
+	use App\Http\Controllers\ImageGenController;
 	use App\Http\Controllers\LangController;
 	use App\Http\Controllers\LoginWithGoogleController;
-	use App\Http\Controllers\LoginWithLineController;
-	use App\Http\Controllers\ProductController;
 	use App\Http\Controllers\StaticPagesController;
 	use App\Http\Controllers\UserController;
 	use App\Http\Controllers\UserSettingsController;
 	use App\Http\Controllers\VerifyThankYouController;
-	use App\Mail\ThankYouForYourOrder;
 	use App\Mail\WelcomeMail;
 	use Illuminate\Http\Request;
 	use Illuminate\Support\Facades\Auth;
@@ -74,15 +67,21 @@
 	//-------------------------------------------------------------------------
 	Route::middleware(['auth'])->group(function () {
 
-		Route::get('/chat', [ChatController::class, 'index'])->name('chat');
-
 		Route::get('/check-llms-json', [ChatController::class, 'checkLLMsJson']);
 
-		Route::get('/image-gen', [ChatController::class, 'index'])->name('image-gen');
 
-
+		Route::get('/chat/sessions', [ChatController::class, 'getChatSessions']);
+		Route::get('/chat/{session_id?}', [ChatController::class, 'index'])->name('chat');
+		Route::post('/create-session', [ChatController::class, 'createSession'])->name('chat.create-session');
+		Route::get('/chat/messages/{sessionId}', [ChatController::class, 'getChatMessages']);
 		Route::post('/send-llm-prompt', [ChatController::class, 'sendLlmPrompt'])->name('send-llm-prompt');
-		Route::post('/make-cover-image', [BookActionController::class, 'makeCoverImage'])->name('make-cover-image');
+		Route::delete('/chat/{sessionId}', [ChatController::class, 'destroy'])->name('chat.destroy');
+
+
+		Route::get('/image-gen/sessions', [ImageGenController::class, 'getImageGenSessions'])->name('image-gen-sessions');
+		Route::get('/image-gen/{session_id?}', [ImageGenController::class, 'index'])->name('image-gen');
+		Route::post('/image-gen', [ImageGenController::class, 'makeImage'])->name('send-image-gen-prompt');
+		Route::delete('/image-gen/{session_id}', [ImageGenController::class, 'destroy'])->name('image-gen.destroy');
 
 
 		Route::get('/settings', [UserSettingsController::class, 'editSettings'])->name('my-settings');
@@ -98,7 +97,7 @@
 
 	});
 
-//-------------------------------------------------------------------------
+	//-------------------------------------------------------------------------
 
 	Auth::routes();
 	Auth::routes(['verify' => true]);

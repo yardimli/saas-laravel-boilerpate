@@ -54,21 +54,21 @@
 // Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php
 		'Blurb' => 'Tanıtım Yazısı',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'Back Cover Text' => 'Arka Kapak Metni',
 
 // Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php
 		'Prompt For Book' => 'Kitap İçin İpucu',
 		'Character Profiles' => 'Karakter Profilleri',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'AI Engines:' => 'Yapay Zeka Motorları:',
 		'Select an AI Engine' => 'Bir Yapay Zeka Motoru Seçin',
 
 // Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php
 		'Number of beats per chapter:' => 'Bölüm başına vuruş sayısı:',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'Writing Style' => 'Yazım Tarzı',
 		'Narrative Style' => 'Anlatım Tarzı',
 
@@ -81,7 +81,7 @@
 // Found in: resources\views\user\all-beats.blade.php
 		'No beats have been generated for this chapter. Please click the "Recreate Beats" button to generate beats. You will need to save the beats before proceeding to write the beat contents.' => 'Bu bölüm için henüz vuruş oluşturulmadı. Lütfen vuruşları oluşturmak için "Vuruşları Yeniden Oluştur" düğmesine tıklayın. Vuruş içeriklerini yazmaya geçmeden önce vuruşları kaydetmeniz gerekecek.',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\book-details.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\book-details.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'Restart Tour' => 'Turu Yeniden Başlat',
 
 // Found in: resources\views\user\all-beats.blade.php
@@ -115,7 +115,7 @@
 		'Save Beats' => 'Vuruşları Kaydet',
 		'Alert' => 'Uyarı',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\book-details.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\settings.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\book-details.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\settings.blade.php, resources\views\user\chat.blade.php
 		'Close' => 'Kapat',
 
 // Found in: resources\views\user\all-beats.blade.php
@@ -132,7 +132,7 @@
 		'Save Summary' => 'Özeti Kaydet',
 		'Cancel' => 'İptal',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\codex.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\codex.blade.php, resources\views\user\chat.blade.php
 		'Processing your request. This may take a few minutes...' => 'İsteğiniz işleniyor. Bu birkaç dakika sürebilir...',
 
 // Found in: resources\views\user\all-beats.blade.php
@@ -164,7 +164,7 @@
 		'Create Cover' => 'Kapak Oluştur',
 		'Enter cover description' => 'Kapak açıklamasını girin',
 
-// Found in: resources\views\user\book-details.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\book-details.blade.php, resources\views\user\chat.blade.php
 		'Book Title' => 'Kitap Başlığı',
 
 // Found in: resources\views\user\book-details.blade.php
@@ -206,7 +206,7 @@
 		'Rewrite Chapter' => 'Bölümü Yeniden Yaz',
 		'Generating Beats for All Chapters' => 'Tüm Bölümler İçin Vuruşlar Oluşturuluyor',
 
-// Found in: resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'Character Profiles' => 'Karakter Profilleri',
 		'User Name' => 'Yazar Adı',
 		'Publisher Name' => 'Yayınevi Adı',
@@ -276,7 +276,7 @@
 		'Read a sample of our books and short stories.' => 'Kitaplarımızdan ve kısa hikayelerimizden bir örnek okuyun.',
 		'Click on the book cover to read the full book or story.' => 'Tam kitabı veya hikayeyi okumak için kitap kapağına tıklayın.',
 
-// Found in: resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\chat.blade.php
 		'Add Book' => 'Kitap Ekle',
 		'Book Description' => 'Kitap Tanıtımı',
 		'Language' => 'Dil',
@@ -378,4 +378,10 @@
 		'Output' => 'Çıktı',
 		'Chat' => 'Sohbet',
 		'Image Gen' => 'Resim Yap',
+
+		'Chat History' => 'Sohbet Geçmişi',
+
+		'Image Generation' => 'Resim Oluşturma',
+		'Image History' => 'Resim Geçmişi',
+
 	];

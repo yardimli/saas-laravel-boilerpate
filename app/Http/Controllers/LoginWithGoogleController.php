@@ -64,7 +64,7 @@
 
 					Auth::login($finduser);
 
-					return redirect()->intended('/start-writing');
+					return redirect()->intended('/chat');
 
 				} else {
 					$username = $user->getNickname() ?? Str::slug($user->name);
@@ -107,7 +107,7 @@
 
 					Auth::login($new_user);
 
-					return redirect()->intended('/start-writing');
+					return redirect()->intended('/chat');
 				}
 
 			} catch

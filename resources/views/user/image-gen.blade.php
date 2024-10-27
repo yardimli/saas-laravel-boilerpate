@@ -12,14 +12,33 @@
 				<!-- Main content START -->
 				<div class="col-12 col-xl-8 col-lg-8 mx-auto">
 					
-					<h5>{{__('default.Chat with AI')}}</h5>
+					<h5>{{__('default.Image Generation')}}</h5>
 					
-					
-					<div class="chat-window" id="chatWindow"
-					     style="border: 1px solid #ccc; height: 400px; overflow-y: scroll; padding: 10px;">
-						<!-- Chat messages will be appended here -->
+					<!-- Generated Image Display Area -->
+					<div id="generatedImageArea" class="mb-4 d-none">
+						<div class="card">
+							<img id="generatedImage" src="" class="card-img-top" alt="Generated Image">
+							<div class="card-body">
+								<h6 class="card-title">Generation Details</h6>
+								<p class="card-text" id="image_prompt"></p>
+								<p class="card-text"><small class="text-muted" id="tokensDisplay"></small></p>
+							</div>
+						</div>
 					</div>
+					
+					
 					<div class="mb-3">
+						{{__('default.Prompt Enhancer')}}:
+						<textarea class="form-control" id="promptEnhancer" rows="6">
+##UserPrompt##
+Write a prompt to create an image using the above text.:
+Write in English even if the above text is written in another language.
+With the above information, compose a image. Write it as a single paragraph. The instructions should focus on the text elements of the image. If the prompt above mentions texts then add them with the instructions of placement. The texts should not repeat. If no texts are mentioned don't add anything to the prompt.</textarea>
+					</div>
+					
+					
+					<div class="mb-3">
+						{{__('default.User Prompt')}}:
 						<textarea class="form-control" id="userPrompt" rows="3"></textarea>
 					</div>
 					<button type="button" class="btn btn-primary" id="sendPromptBtn">{{ __('default.Send Prompt') }}</button>
@@ -62,10 +81,9 @@
 				</div> <!-- Row END -->
 				<div class="col-12 col-xl-4 col-lg-4 mx-auto">
 					
-					<h5>{{__('default.Chat History')}}</h5>
+					<h5>{{__('default.Image History')}}</h5>
 					
-					<div id="chatSessions" class="list-group">
-						<!-- Chat sessions will be loaded here -->
+					<div id="imageGens" class="list-group">
 					</div>
 				
 				</div>
@@ -80,7 +98,7 @@
 @push('scripts')
 	<!-- Inline JavaScript code -->
 	<script>
-		let savedLlm = localStorage.getItem('chat-llm') || 'anthropic/claude-3-haiku:beta';
+		let savedLlm = localStorage.getItem('image-gen-llm') || 'anthropic/claude-3-haiku:beta';
 		let sessionId = null;
 		
 		function getLLMsData() {
@@ -105,27 +123,25 @@
 			});
 		}
 		
-		function loadChatSessions() {
+		function loadImageHistory() {
 			$.ajax({
-				url: '/chat/sessions',
+				url: '/image-gen/sessions',
 				type: 'GET',
 				success: function (response) {
-					const sessionsDiv = $('#chatSessions');
+					const sessionsDiv = $('#imageGens');
 					sessionsDiv.empty();
 					response.forEach(session => {
-						const firstMessage = session.messages[0]?.message || 'New conversation';
-						const date = new Date(session.created_at).toLocaleDateString();
 						sessionsDiv.append(`
                     <div class="list-group-item">
                         <div class="d-flex justify-content-between align-items-center">
-                            <a href="/chat/${session.session_id}" class="chat-session text-decoration-none flex-grow-1" data-session-id="${session.session_id}">
+                            <a href="/image-gen/${session.session_id}" class="text-decoration-none flex-grow-1">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="mb-1">${firstMessage.substring(0, 30)}...</h6>
-                                    <small>${date}</small>
+                                    <h6 class="mb-1">${session.user_prompt.substring(0, 30)}...</h6>
+                                    <small>${new Date(session.created_at).toLocaleDateString()}</small>
                                 </div>
-                                <small>Model: ${session.messages[0]?.llm || 'N/A'}</small>
+                                <small>Model: ${session.llm}</small>
                             </a>
-                            <button class="btn btn-sm btn-danger ms-2 delete-session"
+                            <button class="btn btn-sm btn-danger ms-2 delete-image"
                                     data-session-id="${session.session_id}">
                                 <i class="bi bi-trash"></i>
                             </button>
@@ -134,91 +150,62 @@
                 `);
 					});
 					
-					// Add click handler for delete buttons
-					$('.delete-session').on('click', function(e) {
+					// Add delete button click handler
+					$('.delete-image').on('click', function(e) {
 						e.preventDefault();
-						e.stopPropagation();
 						const sessionId = $(this).data('session-id');
-						if (confirm('Are you sure you want to delete this chat session?')) {
-							deleteSession(sessionId);
+						if (confirm('Are you sure you want to delete this image?')) {
+							deleteImage(sessionId);
 						}
 					});
 				}
 			});
 		}
 		
-		function deleteSession(sessionId) {
+		function deleteImage(sessionId) {
 			$.ajax({
-				url: `/chat/${sessionId}`,
+				url: `/image-gen/${sessionId}`,
 				type: 'DELETE',
 				headers: {
 					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 				},
 				success: function(response) {
 					if (response.success) {
-						// Reload the chat sessions
-						loadChatSessions();
-						
-						// If we're currently viewing the deleted session, redirect to /chat
-						if (sessionId === '{{ $current_session_id }}') {
-							window.location.href = '/chat';
+						// Reload the image history
+						loadImageHistory();
+						// If we're viewing the deleted image, redirect to the main page
+						if (window.location.pathname.includes(sessionId)) {
+							window.location.href = '/image-gen';
 						}
 					} else {
-						alert('Error deleting session: ' + response.message);
+						alert('Error deleting image');
 					}
 				},
 				error: function() {
-					alert('Error deleting session');
-				}
-			});
-		}
-		
-		function loadChatMessages(sessionId) {
-			$('#chatWindow').empty();
-			sessionId = sessionId;
-			
-			$.ajax({
-				url: `/chat/messages/${sessionId}`,
-				type: 'GET',
-				success: function (response) {
-					response.forEach(message => {
-						const tokens = message.role === 'assistant' ?
-							`(Tokens: ${message.prompt_tokens}/${message.completion_tokens})` : '';
-						
-						$('#chatWindow').append(
-							`<div><strong>${message.role}:</strong> ${message.message}
-                         <small class="text-muted">${tokens}</small></div>`
-						);
-					});
-					
-					$('#chatWindow').scrollTop($('#chatWindow')[0].scrollHeight);
+					alert('Error deleting image');
 				}
 			});
 		}
 		
 		$(document).ready(function () {
-			const currentSessionId = '{{ $current_session_id }}';
+			loadImageHistory();
 			
-			if (currentSessionId) {
-				// Load the existing session
-				sessionId = currentSessionId;
-				loadChatMessages(sessionId);
-			} else {
-				// Create new session
-				$.ajax({
-					url: '{{ route('chat.create-session') }}',
-					type: 'POST',
-					headers: {
-						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-					},
-					success: function (data) {
-						sessionId = data.session_id;
-					}
-				});
+			@if(isset($current_session))
+			const currentSession = @json($current_session);
+			if (currentSession) {
+				$('#generatedImageArea').removeClass('d-none');
+				$('#generatedImage').attr('src', '/storage/' + currentSession.image_path);
+				$('#image_prompt').text(currentSession.image_prompt);
+				$('#tokensDisplay').text(`Tokens Used: ${currentSession.prompt_tokens}/${currentSession.completion_tokens}`);
+				$('#userPrompt').val(currentSession.user_prompt);
+				$('#promptEnhancer').val(currentSession.llm_prompt);
+				
+				// Set the LLM select
+				if (currentSession.llm) {
+					$('#llmSelect').val(currentSession.llm).trigger('change');
+				}
 			}
-			
-			loadChatSessions();
-			
+			@endif
 			
 			getLLMsData().then(function (llmsData) {
 				const llmSelect = $('#llmSelect');
@@ -271,7 +258,7 @@
 			});
 			
 			$("#llmSelect").on('change', function () {
-				localStorage.setItem('chat-llm', $(this).val());
+				localStorage.setItem('image-gen-llm', $(this).val());
 				savedLlm = $(this).val();
 			});
 			
@@ -288,30 +275,29 @@
 			
 			
 			$('#sendPromptBtn').on('click', function () {
+				const promptEnhancer = $('#promptEnhancer').val();
 				const userPrompt = $('#userPrompt').val();
 				const llm = $('#llmSelect').val();
-				
-				$('#userPrompt').val('');
-				$('#chatWindow').append('<div><strong>User:</strong> ' + userPrompt + '</div>');
-				$('#chatWindow').scrollTop($('#chatWindow')[0].scrollHeight);
 				
 				$('#sendPromptBtn').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...');
 				
 				$.ajax({
-					url: '{{ route('send-llm-prompt') }}',
+					url: '{{ route('send-image-gen-prompt') }}',
 					method: 'POST',
-					data: {user_prompt: userPrompt, session_id: sessionId, llm: llm},
+					data: {prompt_enhancer: promptEnhancer, user_prompt: userPrompt, llm: llm},
 					headers: {
 						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 					},
 					dataType: 'json',
-					success: function (response) {
-						if (response.success) {
-							$('#chatWindow').append(`<div><strong>Assistant:</strong>${response.result.content}(Tokens: ${response.result.prompt_tokens}/${response.result.completion_tokens})</div>`);
+					success: function (result) {
+						if (result.success) {
+							$('#generatedImageArea').removeClass('d-none');
+							$('#generatedImage').attr('src', '/storage/' + result.output_path);
+							$('#image_prompt').text(result.image_prompt);
+							$('#tokensDisplay').text(`Tokens Used: ${result.prompt_tokens}/${result.completion_tokens}`);
 						} else {
-							$('#chatWindow').append('<div><strong>Error:</strong> ' + JSON.stringify(response) + '</div>');
+							alert('Error generating image');
 						}
-						$('#chatWindow').scrollTop($('#chatWindow')[0].scrollHeight);
 						$('#sendPromptBtn').prop('disabled', false).text('Send Prompt');
 					}
 				});

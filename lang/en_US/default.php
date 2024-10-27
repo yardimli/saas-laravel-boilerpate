@@ -54,21 +54,21 @@
 // Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php
 		'Blurb' => 'Blurb',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'Back Cover Text' => 'Back Cover Text',
 
 // Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php
 		'Prompt For Book' => 'Prompt For Book',
 		'Character Profiles' => 'Character Profiles',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'AI Engines:' => 'AI Engines:',
 		'Select an AI Engine' => 'Select an AI Engine',
 
 // Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php
 		'Number of beats per chapter:' => 'Number of beats per chapter:',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'Writing Style' => 'Writing Style',
 		'Narrative Style' => 'Narrative Style',
 
@@ -81,7 +81,7 @@
 // Found in: resources\views\user\all-beats.blade.php
 		'No beats have been generated for this chapter. Please click the "Recreate Beats" button to generate beats. You will need to save the beats before proceeding to write the beat contents.' => 'No beats have been generated for this chapter. Please click the "Recreate Beats" button to generate beats. You will need to save the beats before proceeding to write the beat contents.',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\book-details.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\book-details.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'Restart Tour' => 'Restart Tour',
 
 // Found in: resources\views\user\all-beats.blade.php
@@ -115,7 +115,7 @@
 		'Save Beats' => 'Save Beats',
 		'Alert' => 'Alert',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\book-details.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\settings.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\book-details.blade.php, resources\views\user\codex.blade.php, resources\views\user\edit-book.blade.php, resources\views\user\settings.blade.php, resources\views\user\chat.blade.php
 		'Close' => 'Close',
 
 // Found in: resources\views\user\all-beats.blade.php
@@ -132,7 +132,7 @@
 		'Save Summary' => 'Save Summary',
 		'Cancel' => 'Cancel',
 
-// Found in: resources\views\user\all-beats.blade.php, resources\views\user\codex.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\all-beats.blade.php, resources\views\user\codex.blade.php, resources\views\user\chat.blade.php
 		'Processing your request. This may take a few minutes...' => 'Processing your request. This may take a few minutes...',
 
 // Found in: resources\views\user\all-beats.blade.php
@@ -164,7 +164,7 @@
 		'Create Cover' => 'Create Cover',
 		'Enter cover description' => 'Enter cover description',
 
-// Found in: resources\views\user\book-details.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\book-details.blade.php, resources\views\user\chat.blade.php
 		'Book Title' => 'Book Title',
 
 // Found in: resources\views\user\book-details.blade.php
@@ -206,7 +206,7 @@
 		'Rewrite Chapter' => 'Rewrite Chapter',
 		'Generating Beats for All Chapters' => 'Generating Beats for All Chapters',
 
-// Found in: resources\views\user\edit-book.blade.php, resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\edit-book.blade.php, resources\views\user\chat.blade.php
 		'Character Profiles' => 'Character Profiles',
 		'User Name' => 'User Name',
 		'Publisher Name' => 'Publisher Name',
@@ -276,7 +276,7 @@
 		'Read a sample of our books and short stories.' => 'Read a sample of our books and short stories.',
 		'Click on the book cover to read the full book or story.' => 'Click on the book cover to read the full book or story.',
 
-// Found in: resources\views\user\start-writing.blade.php
+// Found in: resources\views\user\chat.blade.php
 		'Add Book' => 'Add Book',
 		'Book Description' => 'Book Description',
 		'Language' => 'Language',
@@ -350,5 +350,10 @@
 
 		'Chat' => 'Chat',
 		'Image Gen' => 'Image Gen',
+
+		'Chat History' => 'Chat History',
+
+		'Image Generation' => 'Image Generation',
+		'Image History' => 'Image History',
 
 	];

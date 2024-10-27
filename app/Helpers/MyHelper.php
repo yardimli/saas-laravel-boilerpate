@@ -3,11 +3,12 @@
 	namespace App\Helpers;
 
 	use App\Models\SentencesTable;
-	use BinshopsBlog\Models\BinshopsCategory;
-	use BinshopsBlog\Models\BinshopsCategoryTranslation;
-	use BinshopsBlog\Models\BinshopsLanguage;
-	use BinshopsBlog\Models\BinshopsPostTranslation;
+	use App\Models\BinshopsCategory;
+	use App\Models\BinshopsCategoryTranslation;
+	use App\Models\BinshopsLanguage;
+	use App\Models\BinshopsPostTranslation;
 	use Carbon\Carbon;
+	use GuzzleHttp\Client;
 	use Illuminate\Http\Request;
 	use Illuminate\Support\Facades\Auth;
 	use Illuminate\Support\Facades\DB;
@@ -22,6 +23,105 @@
 
 	class MyHelper
 	{
+		public static function checkLLMsJson()
+		{
+			$llmsJsonPath = Storage::disk('public')->path('llms.json');
+
+			if (!File::exists($llmsJsonPath) || Carbon::now()->diffInDays(Carbon::createFromTimestamp(File::lastModified($llmsJsonPath))) > 1) {
+				$client = new Client();
+				$response = $client->get('https://openrouter.ai/api/v1/models');
+				$data = json_decode($response->getBody(), true);
+
+				if (isset($data['data'])) {
+					File::put($llmsJsonPath, json_encode($data['data']));
+				} else {
+					return [];
+				}
+			}
+
+			$openrouter_admin_or_key = false;
+			if ((Auth::user() && Auth::user()->isAdmin()) ||
+				(Auth::user() && !empty(Auth::user()->openrouter_key))) {
+				$openrouter_admin_or_key = true;
+			}
+
+			$llms_with_rank_path = resource_path('data/llms_with_rank.json');
+			$llms_with_rank = json_decode(File::get($llms_with_rank_path), true);
+
+			$llms = json_decode(File::get($llmsJsonPath), true);
+			$filtered_llms = array_filter($llms, function ($llm) use ($openrouter_admin_or_key) {
+				if (isset($llm['id']) && (stripos($llm['id'], 'openrouter/auto') !== false)) {
+					return false;
+				}
+
+				if (isset($llm['id']) && (stripos($llm['id'], 'vision') !== false)) {
+					return false;
+				}
+
+				if (isset($llm['id']) && (stripos($llm['id'], '-3b-') !== false)) {
+					return false;
+				}
+
+				if (isset($llm['id']) && (stripos($llm['id'], '-1b-') !== false)) {
+					return false;
+				}
+
+				if (isset($llm['id']) && (stripos($llm['id'], 'online') !== false)) {
+					return false;
+				}
+
+				if (isset($llm['id']) && (stripos($llm['id'], 'gpt-3.5') !== false)) {
+					return false;
+				}
+
+				if (isset($llm['pricing']['completion'])) {
+					$price_per_million = floatval($llm['pricing']['completion']) * 1000000;
+					if ($openrouter_admin_or_key) {
+						return $price_per_million <= 20;
+					} else {
+						return $price_per_million <= 1.5;
+					}
+				}
+
+				if (!isset($llm['pricing']['completion'])) {
+					return false;
+				}
+
+				return true;
+			});
+
+			foreach ($filtered_llms as &$filtered_llm) {
+				$found_rank = false;
+				foreach ($llms_with_rank as $llm_with_rank) {
+					if ($filtered_llm['id'] === $llm_with_rank['id']) {
+						$filtered_llm['score'] = $llm_with_rank['score'] ?? 0;
+						$filtered_llm['ugi'] = $llm_with_rank['ugi'] ?? 0;
+						$found_rank = true;
+					}
+				}
+				if (!$found_rank) {
+					$filtered_llm['score'] = 0;
+					$filtered_llm['ugi'] = 0;
+				}
+			}
+
+			// Sort $filtered_llms by score, then alphabetically for score 0
+			usort($filtered_llms, function ($a, $b) {
+				// First, compare by score in descending order
+				$scoreComparison = $b['score'] <=> $a['score'];
+
+				// If scores are different, return this comparison
+				if ($scoreComparison !== 0) {
+					return $scoreComparison;
+				}
+
+				// If scores are the same (particularly both 0), sort alphabetically by name
+				return strcmp($a['name'], $b['name']);
+			});
+
+			//for each llm with score 0 sort them alphabetically
+			return array_values($filtered_llms);
+		}
 
 		public static function getBlogData()
 		{
@@ -443,7 +543,7 @@
 			}
 		}
 
-		public static function llm_no_tool_call($llm, $system_prompt, $prompt, $return_json = true)
+		public static function llm_no_tool_call($llm, $system_prompt, $chat_messages, $return_json = true)
 		{
 			set_time_limit(300);
 			session_write_close();
@@ -473,21 +573,18 @@
 				$llm_model = $llm;
 			}
 
-			$chat_messages = [];
-
 
 			if ($llm === 'anthropic-haiku' || $llm === 'anthropic-sonet') {
 			} else {
-				$chat_messages[] = [
+				array_prepend($chat_messages, [
 					'role' => 'system',
-					'content' => $system_prompt];
+					'content' => $system_prompt]);
 			}
 
-
-			$chat_messages[] = [
-				'role' => 'user',
-				'content' => $prompt
-			];
+//			$chat_messages[] = [
+//				'role' => 'user',
+//				'content' => $prompt
+//			];
 
 			$temperature = 0.8;
 			$max_tokens = 8096;
@@ -570,11 +667,17 @@
 
 			Log::info("GPT NO STREAM RESPONSE:");
 			Log::info($complete_rst);
+			$prompt_tokens = 0;
+			$completion_tokens = 0;
 
 			if ($llm === 'open-ai-gpt-4o' || $llm === 'open-ai-gpt-4o-mini') {
 				$content = $complete_rst['choices'][0]['message']['content'];
+				$prompt_tokens = $complete_rst['usage']['prompt_tokens'] ?? 0;
+				$completion_tokens = $complete_rst['usage']['completion_tokens'] ?? 0;
 			} else if ($llm === 'anthropic-haiku' || $llm === 'anthropic-sonet') {
 				$content = $complete_rst['content'][0]['text'];
+				$prompt_tokens = $complete_rst['usage']['prompt_tokens'] ?? 0;
+				$completion_tokens = $complete_rst['usage']['completion_tokens'] ?? 0;
 			} else {
 				if (isset($complete_rst['error'])) {
 					Log::info('================== ERROR =====================');
@@ -584,6 +687,8 @@
 				}
 				if (isset($complete_rst['choices'][0]['message']['content'])) {
 					$content = $complete_rst['choices'][0]['message']['content'];
+					$prompt_tokens = $complete_rst['usage']['prompt_tokens'] ?? 0;
+					$completion_tokens = $complete_rst['usage']['completion_tokens'] ?? 0;
 				} else {
 					$content = '';
 				}
@@ -591,7 +696,7 @@
 
 			if (!$return_json) {
 				Log::info('Return is NOT JSON. Will return content presuming it is text.');
-				return $content;
+				return array('content' => $content, 'prompt_tokens' => $prompt_tokens, 'completion_tokens' => $completion_tokens);
 			}
 
 //			$content = str_replace("\\\"", "\"", $content);

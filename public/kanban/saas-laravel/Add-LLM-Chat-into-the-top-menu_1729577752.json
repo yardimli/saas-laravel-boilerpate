@@ -1,13 +1,13 @@
 {
-    "column": "in-progress",
-    "order": "0",
+    "column": "finished",
+    "order": "2",
     "title": "Add LLM Chat into the top menu",
     "text": "add a simple chat interface to be able to test llm functions",
     "owner": "Ekim",
     "backgroundColor": "#F28B82",
     "textColor": "#000000",
     "created": "2024-10-22 06:15:52",
-    "lastUpdated": "2024-10-23 11:42:54",
+    "lastUpdated": "2024-10-26 13:17:46",
     "comments": [],
     "files": [],
     "history": [
@@ -20,6 +20,11 @@
             "action": "Moved card to in-progress",
             "user": "Ekim",
             "timestamp": "2024-10-23 11:42:54"
+        },
+        {
+            "action": "Moved card to finished",
+            "user": "Ekim",
+            "timestamp": "2024-10-26 13:17:46"
         }
     ],
     "archived": false
