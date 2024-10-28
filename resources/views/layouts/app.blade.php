@@ -204,6 +204,8 @@ Header START -->
 								</div>
 								<a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
 								   href="{{route('my-settings')}}">{{__('My Books')}}</a>
+								<a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
+								   href="/blog_admin">{{__('Blog Admin')}}</a>
 							</li>
 							<a class="dropdown-item" href="{{route('my-settings')}}"><i
 									class="bi bi-person  me-2"></i>{{__('default.Settings')}}</a>
