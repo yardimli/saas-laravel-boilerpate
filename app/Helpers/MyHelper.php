@@ -576,15 +576,12 @@
 
 			if ($llm === 'anthropic-haiku' || $llm === 'anthropic-sonet') {
 			} else {
-				array_prepend($chat_messages, [
+				$chat_messages = [ [
 					'role' => 'system',
-					'content' => $system_prompt]);
+					'content' => $system_prompt],
+					...$chat_messages
+				];
 			}
-
-//			$chat_messages[] = [
-//				'role' => 'user',
-//				'content' => $prompt
-//			];
 
 			$temperature = 0.8;
 			$max_tokens = 8096;
