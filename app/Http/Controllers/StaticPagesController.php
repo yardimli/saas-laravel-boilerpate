@@ -21,12 +21,6 @@
 	use Illuminate\Validation\ValidationException;
 	use Illuminate\Pagination\LengthAwarePaginator;
 
-	use BinshopsBlog\Models\BinshopsCategory;
-	use BinshopsBlog\Models\BinshopsCategoryTranslation;
-	use BinshopsBlog\Models\BinshopsLanguage;
-	use BinshopsBlog\Models\BinshopsPostTranslation;
-
-
 	class StaticPagesController extends Controller
 	{
 
@@ -46,6 +40,11 @@
 		public function landing(Request $request)
 		{
 			return view('landing.landing');
+		}
+
+		public function blog(Request $request)
+		{
+			return view('user.blog');
 		}
 
 		public function about(Request $request)

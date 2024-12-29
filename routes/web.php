@@ -40,6 +40,7 @@
 	Route::get('/verify-thank-you', [VerifyThankYouController::class, 'index'])->name('verify-thank-you')->middleware('verified');
 	Route::get('/verify-thank-you-zh_TW', [VerifyThankYouController::class, 'index_zh_TW'])->name('verify-thank-you-zh_TW')->middleware('verified');
 
+	Route::get('/blog', [StaticPagesController::class, 'blog'])->name('blog-page');
 	Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy-page');
 	Route::get('/terms', [StaticPagesController::class, 'terms'])->name('terms-page');
 	Route::get('/help', [StaticPagesController::class, 'help'])->name('help-page');

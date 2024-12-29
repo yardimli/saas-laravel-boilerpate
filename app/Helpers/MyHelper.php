@@ -3,10 +3,6 @@
 	namespace App\Helpers;
 
 	use App\Models\SentencesTable;
-	use App\Models\BinshopsCategory;
-	use App\Models\BinshopsCategoryTranslation;
-	use App\Models\BinshopsLanguage;
-	use App\Models\BinshopsPostTranslation;
 	use Carbon\Carbon;
 	use GuzzleHttp\Client;
 	use Illuminate\Http\Request;
@@ -121,76 +117,6 @@
 
 			//for each llm with score 0 sort them alphabetically
 			return array_values($filtered_llms);
-		}
-
-		public static function getBlogData()
-		{
-			$locale = \App::getLocale() ?: config('app.fallback_locale', 'zh_TW');
-
-			// the published_at + is_published are handled by BinshopsBlogPublishedScope, and don't take effect if the logged in user can manageb log posts
-
-			//todo
-			$title = 'Blog Page'; // default title...
-			$category_slug = null;
-
-			$categoryChain = null;
-			$posts = array();
-			if ($category_slug) {
-				$category = BinshopsCategoryTranslation::where("slug", $category_slug)->with('category')->firstOrFail()->category;
-				$categoryChain = $category->getAncestorsAndSelf();
-				$posts = $category->posts()->where("binshops_post_categories.category_id", $category->id)->get(); //->where("lang_id", '=', 2)->get();
-
-				$posts = BinshopsPostTranslation::join('binshops_posts', 'binshops_post_translations.post_id', '=', 'binshops_posts.id')
-//					->where('lang_id', 2)
-					->where("is_published", '=', true)
-					->where('posted_at', '<', Carbon::now()->format('Y-m-d H:i:s'))
-					->orderBy("posted_at", "desc")
-					->whereIn('binshops_posts.id', $posts->pluck('id'))
-					->paginate(config("binshopsblog.per_page", 10));
-
-				// at the moment we handle this special case (viewing a category) by hard coding in the following two lines.
-				// You can easily override this in the view files.
-				\View::share('binshopsblog_category', $category); // so the view can say "You are viewing $CATEGORYNAME category posts"
-				$title = 'Posts in ' . $category->category_name . " category"; // hardcode title here...
-			} else {
-				$posts = BinshopsPostTranslation::join('binshops_posts', 'binshops_post_translations.post_id', '=', 'binshops_posts.id')
-//					->where('lang_id', 2)
-					->where("is_published", '=', true)
-					->where('posted_at', '<', Carbon::now()->format('Y-m-d H:i:s'))
-					->orderBy("posted_at", "desc")
-					->paginate(config("binshopsblog.per_page", 10));
-
-				foreach ($posts as $post) {
-					$post->category_name = '';
-					//get post categories
-					$categories = BinshopsCategory::join('binshops_post_categories', 'binshops_categories.id', '=', 'binshops_post_categories.category_id')
-						->where('binshops_post_categories.post_id', $post->id)
-						->get();
-					//get category translations
-					$categories = json_decode(json_encode($categories), true);
-					foreach ($categories as $category) {
-						if ($post->category_name == '' || $post->category_name == null) {
-							$post->category_name = BinshopsCategoryTranslation::where('category_id', $category['category_id'])->first()->category_name ?? '';
-						}
-					}
-				}
-			}
-
-			//load category hierarchy
-			$rootList = BinshopsCategory::roots()->get();
-			BinshopsCategory::loadSiblingsWithList($rootList);
-
-			$blogData = [
-				'lang_list' => BinshopsLanguage::all('locale', 'name'),
-				'locale' => $locale, // $request->get("locale"),
-				'category_chain' => $categoryChain,
-				'categories' => $rootList,
-				'posts' => $posts,
-				'title' => $title,
-			];
-
-			return $blogData;
-
 		}
 
 		public static function moderation($message)

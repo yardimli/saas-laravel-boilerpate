@@ -4,12 +4,6 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/yardimli/aspirant-blog"
-        }
-    ],
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
@@ -22,8 +16,7 @@
         "socialiteproviders/line": "^4.1",
         "symfony/http-client": "^6.2",
         "symfony/mailgun-mailer": "^6.3",
-        "vlucas/phpdotenv": "^5.5",
-        "yardimli/aspirant-blog": "dev-main"
+        "vlucas/phpdotenv": "^5.5"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
